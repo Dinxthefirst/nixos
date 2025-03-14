@@ -68,17 +68,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-  };
-
-  environment.sessionVariables = {
-    # Hint elextron apps to use wayland
-    NIXOS_OZONE_WL = "1";
-  };
-
   hardware.graphics.enable = true;
 
   # List packages installed in system profile. To search, run:
