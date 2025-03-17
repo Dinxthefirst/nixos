@@ -20,19 +20,21 @@
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
+          inputs.home-manager.nixosModules.default
           ./configuration.nix
           ./laptop/hardware-configuration.nix
           ./hyprland.nix
-          inputs.home-manager.nixosModules.default
         ];
       };
       nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
+          inputs.home-manager.nixosModules.default
           ./configuration.nix
           ./desktop/hardware-configuration.nix
           ./gnome.nix
-          inputs.home-manager.nixosModules.default
+          ./discord.nix
+          ./steam.nix
         ];
       };
   };
