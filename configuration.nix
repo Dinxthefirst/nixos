@@ -90,8 +90,6 @@
     };
   };
 
-  fonts.packages = with pkgs; [ fira-code font-awesome ];
-
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];

@@ -23,6 +23,7 @@
           inputs.home-manager.nixosModules.default
           ./configuration.nix
           ./laptop/hardware-configuration.nix
+          ./fonts.nix
           ./hyprland.nix
         ];
       };
@@ -32,6 +33,7 @@
           inputs.home-manager.nixosModules.default
           ./configuration.nix
           ./desktop/hardware-configuration.nix
+          ./fonts.nix
           ./gnome.nix
           ./discord.nix
           ./steam.nix
