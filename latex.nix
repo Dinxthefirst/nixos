@@ -2,6 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    texlive.combined.scheme-medium
+    (texlive.combine {
+      inherit (texlive) scheme-full;
+    })
   ];
 }
