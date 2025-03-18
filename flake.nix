@@ -9,13 +9,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    alejandra = {
+      url = "github:kamadorueda/alejandra/3.1.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
     experimental-features = [ "nix-command" "flakes" ];
   };
 
-  outputs = { self, nixpkgs, zen-browser, hyprland, ... } @ inputs:
+  outputs = { self, nixpkgs, zen-browser, hyprland, alejandra, ... } @ inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -37,6 +41,7 @@
           modules = [
             inputs.home-manager.nixosModules.default
             ./desktop/hardware-configuration.nix
+            ./desktop/drivers.nix
             ./configuration.nix
             ./gnome.nix
             ./discord.nix
