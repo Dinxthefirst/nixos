@@ -1,5 +1,7 @@
-{ inputs, pkgs, ... }:
-
 {
-  fonts.packages = with pkgs; [ fira-code font-awesome ];
+  inputs,
+  pkgs,
+  ...
+}: {
+  fonts.packages = with pkgs; [fira-code font-awesome];
 }

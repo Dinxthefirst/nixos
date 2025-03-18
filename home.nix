@@ -1,10 +1,13 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   home.username = "toft";
   home.homeDirectory = "/home/toft";
 
-  home.stateVersion = "24.11"; 
+  home.stateVersion = "24.11";
 
   home.packages = [
     inputs.zen-browser.packages."x86_64-linux".default

@@ -16,40 +16,45 @@
   };
 
   nixConfig = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = ["nix-command" "flakes"];
   };
 
-  outputs = { self, nixpkgs, zen-browser, hyprland, alejandra, ... } @ inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs system; };
-          modules = [
-            inputs.home-manager.nixosModules.default
-            ./laptop/hardware-configuration.nix
-            ./laptop/packages.nix
-            ./configuration.nix
-            ./hyprland.nix
-          ];
-        };
-        desktop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs system; };
-          modules = [
-            inputs.home-manager.nixosModules.default
-            ./desktop/hardware-configuration.nix
-            ./desktop/drivers.nix
-            ./configuration.nix
-            ./gnome.nix
-            ./discord.nix
-            ./steam.nix
-            ./stremio.nix
-            ./latex.nix
-          ];
-        };
+  outputs = {
+    self,
+    nixpkgs,
+    zen-browser,
+    hyprland,
+    alejandra,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    nixosConfigurations = {
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs system;};
+        modules = [
+          inputs.home-manager.nixosModules.default
+          ./laptop/hardware-configuration.nix
+          ./laptop/packages.nix
+          ./configuration.nix
+          ./hyprland.nix
+        ];
+      };
+      desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs system;};
+        modules = [
+          inputs.home-manager.nixosModules.default
+          ./desktop/hardware-configuration.nix
+          ./desktop/drivers.nix
+          ./configuration.nix
+          ./gnome.nix
+          ./discord.nix
+          ./steam.nix
+          ./stremio.nix
+          ./latex.nix
+        ];
       };
     };
+  };
 }
