@@ -42,6 +42,7 @@
             ./discord.nix
             ./steam.nix
             ./stremio.nix
+            ./latex.nix
           ];
         };
       };

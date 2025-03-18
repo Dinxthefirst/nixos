@@ -27,7 +27,9 @@
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
+      brettm12345.nixfmt-vscode
       ms-vsliveshare.vsliveshare
+      james-yu.latex-workshop
     ];
   };
 }
