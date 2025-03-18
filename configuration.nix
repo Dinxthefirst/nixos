@@ -49,7 +49,7 @@
     description = "toft";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
-    # shell = pkgs.zsh;
+    shell = pkgs.zsh;
   };
 
   # programs.zsh.enable = true;
