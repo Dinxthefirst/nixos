@@ -81,6 +81,7 @@
     firefox
     git
     fastfetch
+    networkmanagerapplet
   ];
 
   home-manager = {
