@@ -49,9 +49,10 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
   };
 
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
 
   hardware.graphics.enable = true;
 
