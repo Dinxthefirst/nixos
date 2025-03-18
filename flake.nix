@@ -11,33 +11,38 @@
     };
   };
 
+  nixConfig = {
+    experimental-features = [ "nix-command" "flakes" ];
+  };
+
   outputs = { self, nixpkgs, zen-browser, hyprland, ... } @ inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          inputs.home-manager.nixosModules.default
-          ./configuration.nix
-          ./laptop/hardware-configuration.nix
-          ./fonts.nix
-          ./hyprland.nix
-        ];
+      nixosConfigurations = {
+        laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs system; };
+          modules = [
+            inputs.home-manager.nixosModules.default
+            ./laptop/hardware-configuration.nix
+            ./laptop/packages.nix
+            ./configuration.nix
+            ./hyprland.nix
+          ];
+        };
+        desktop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs system; };
+          modules = [
+            inputs.home-manager.nixosModules.default
+            ./desktop/hardware-configuration.nix
+            ./configuration.nix
+            ./gnome.nix
+            ./discord.nix
+            ./steam.nix
+          ];
+        };
       };
-      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          inputs.home-manager.nixosModules.default
-          ./configuration.nix
-          ./desktop/hardware-configuration.nix
-          ./fonts.nix
-          ./gnome.nix
-          ./discord.nix
-          ./steam.nix
-        ];
-      };
-  };
+    };
 }
