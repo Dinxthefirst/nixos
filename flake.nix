@@ -41,6 +41,7 @@
             ./gnome.nix
             ./discord.nix
             ./steam.nix
+            ./stremio.nix
           ];
         };
       };
