@@ -59,4 +59,6 @@
     enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
+
+  system.stateVersion = "25.05";
 }
