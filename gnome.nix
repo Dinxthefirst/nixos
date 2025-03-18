@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   services.xserver = {
@@ -6,8 +6,7 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
-
-  environment.gnome.excludePackages = (with pkgs; [
+  environment.gnome.excludePackages = with pkgs; [
     epiphany
     evince
     geary
@@ -18,5 +17,5 @@
     gnome-terminal
     gnome-tour
     totem
-  ]);
+  ];
 }
