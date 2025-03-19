@@ -13,6 +13,7 @@
 
   home.packages = [
     inputs.zen-browser.packages."x86_64-linux".default
+    pkgs.home-manager
   ];
 
   nixpkgs.config.allowUnfree = true;
