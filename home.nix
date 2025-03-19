@@ -9,13 +9,14 @@
 
   home.stateVersion = "24.11";
 
+  programs.home-manager.enable = true;
+
   home.packages = [
     inputs.zen-browser.packages."x86_64-linux".default
+    pkgs.home-manager
   ];
 
   nixpkgs.config.allowUnfree = true;
-
-  programs.home-manager.enable = true;
 
   programs.git = {
     enable = true;
