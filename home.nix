@@ -40,13 +40,14 @@
         # azemoh.one-monokai
       ];
       userSettings = {
+        "editor"."tabSize" = 4;
         "editor"."formatOnSave" = true;
       };
     };
   };
 }
 # {
-# "editor.tabSize" = 4;
+#   "editor.tabSize" = 4;
 #   "[html, nix, ocaml, json, css, javascript]" = {
 #     "editor.tabSize" = 2;
 #   };
