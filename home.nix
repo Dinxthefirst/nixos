@@ -29,18 +29,20 @@
 
   programs.vscode = {
     enable = true;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      kamadorueda.alejandra
-      bbenoist.nix
-      ms-vsliveshare.vsliveshare
-      james-yu.latex-workshop
-      esbenp.prettier-vscode
-      ocamllabs.ocaml-platform
-      # azemoh.one-monokai
-    ];
-    # userSettings = {
-    #   "editor.formatOnSave" = true;
-    # };
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        kamadorueda.alejandra
+        bbenoist.nix
+        ms-vsliveshare.vsliveshare
+        james-yu.latex-workshop
+        esbenp.prettier-vscode
+        ocamllabs.ocaml-platform
+        # azemoh.one-monokai
+      ];
+      # userSettings = {
+      #   "editor.formatOnSave" = true;
+      # };
+    };
   };
 }
 # {
