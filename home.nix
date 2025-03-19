@@ -36,7 +36,7 @@
       james-yu.latex-workshop
       esbenp.prettier-vscode
       ocamllabs.ocaml-platform
-      azemoh.one-monokai
+      # azemoh.one-monokai
     ];
   };
 }

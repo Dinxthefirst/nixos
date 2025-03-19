@@ -16,6 +16,11 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users.toft = import ./home.nix;
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
 
