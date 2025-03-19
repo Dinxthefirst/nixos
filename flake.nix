@@ -3,12 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    hyprland.url = "github:hyprwm/Hyprland";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    hyprland.url = "github:hyprwm/Hyprland";
     alejandra = {
       url = "github:kamadorueda/alejandra/3.1.0";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,6 +22,7 @@
   outputs = {
     self,
     nixpkgs,
+    home-manager,
     zen-browser,
     hyprland,
     alejandra,
@@ -34,7 +35,7 @@
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs system;};
         modules = [
-          inputs.home-manager.nixosModules.default
+          home-manager.nixosModules.home-manager
           ./laptop/hardware-configuration.nix
           ./laptop/packages.nix
           ./configuration.nix
@@ -44,7 +45,7 @@
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs system;};
         modules = [
-          inputs.home-manager.nixosModules.default
+          home-manager.nixosModules.home-manager
           ./desktop/hardware-configuration.nix
           ./desktop/drivers.nix
           ./configuration.nix
