@@ -39,9 +39,10 @@
         ocamllabs.ocaml-platform
         # azemoh.one-monokai
       ];
-      # userSettings = {
-      #   "editor.formatOnSave" = true;
-      # };
+      userSettings = {
+        # "[nix]"."editor.tabSize" = 2;
+        #   "editor"."formatOnSave" = true;
+      };
     };
   };
 }
