@@ -40,8 +40,7 @@
         # azemoh.one-monokai
       ];
       userSettings = {
-        # "[nix]"."editor.tabSize" = 2;
-        #   "editor"."formatOnSave" = true;
+        "editor"."formatOnSave" = true;
       };
     };
   };
