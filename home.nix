@@ -38,6 +38,7 @@
         esbenp.prettier-vscode
         ocamllabs.ocaml-platform
         # azemoh.one-monokai
+        dracula-theme.theme-dracula
       ];
       userSettings = {
         "editor"."tabSize" = 4;
