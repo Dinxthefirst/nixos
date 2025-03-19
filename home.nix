@@ -58,7 +58,7 @@
         "editor"."minimap.enabled" = false;
         "editor"."fontFamily" = "'Fira Code'";
         "editor"."fontLigatures" = true;
-        "workbench"."colorTheme" = "One Monokai";
+        "workbench"."colorTheme" = "Dracula Theme";
       };
     };
   };
