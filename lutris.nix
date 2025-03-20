@@ -9,5 +9,7 @@
     alsa-lib
     vkd3d
     vulkan-loader
+    vulkan-tools
+    dxvk
   ];
 }
