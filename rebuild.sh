@@ -4,6 +4,7 @@ set -euo pipefail
 CONFIG_DIR="$HOME/.config/nixos"
 NIXOS_LOG_FILE="$CONFIG_DIR/nixos-switch.log"
 GIT_LOG_FILE="$CONFIG_DIR/git.log"
+TARGET=$1
 
 git_log() {
     echo "> git $*" >> "$GIT_LOG_FILE"
@@ -16,8 +17,8 @@ git_log diff -U0 --color=always *.nix || true
 
 git_log ls-files --others --exclude-standard | xargs -r -I {} git_log add {}
 
-echo "NixOS Rebuilding..."
-if sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#desktop" --option cores 4 &> "$NIXOS_LOG_FILE"; then
+echo "NixOS Rebuilding For $TARGET..."
+if sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#$TARGET" --option cores 4 &> "$NIXOS_LOG_FILE"; then
     echo "Rebuild successful!"
 else
     echo "Rebuild failed. Showing errors:"

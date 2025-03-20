@@ -33,17 +33,24 @@
   in {
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs system;};
+        specialArgs = {
+          inherit inputs system;
+          target = "laptop";
+        };
         modules = [
           home-manager.nixosModules.home-manager
           ./laptop/hardware-configuration.nix
           ./laptop/packages.nix
           ./configuration.nix
           ./hyprland.nix
+          ./zsh.nix
         ];
       };
       desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs system;};
+        specialArgs = {
+          inherit inputs system;
+          target = "desktop";
+        };
         modules = [
           home-manager.nixosModules.home-manager
           ./desktop/hardware-configuration.nix
@@ -55,6 +62,7 @@
           ./stremio.nix
           ./latex.nix
           ./lutris.nix
+          ./zsh.nix
         ];
       };
     };
