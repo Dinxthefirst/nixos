@@ -7,7 +7,7 @@
 
     shellAliases = {
       config = "code ~/.config/nixos";
-      rebuild = "~/rebuild.sh";
+      rebuild = "~/.config/nixos/rebuild.sh";
       p = "ping archlinux.org";
       ls = "ls --color=auto -v";
       ll = "ls -la --color=auto";
