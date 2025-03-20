@@ -9,10 +9,6 @@
     };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     hyprland.url = "github:hyprwm/Hyprland";
-    # alejandra = {
-    #   url = "github:kamadorueda/alejandra/3.1.0";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
   };
 
   nixConfig = {
@@ -25,7 +21,6 @@
     home-manager,
     zen-browser,
     hyprland,
-    # alejandra,
     ...
   } @ inputs: let
     system = "x86_64-linux";
