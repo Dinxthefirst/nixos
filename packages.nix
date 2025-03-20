@@ -6,5 +6,6 @@
     firefox
     fastfetch
     alejandra
+    nix-direnv
   ];
 }
