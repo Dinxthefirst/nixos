@@ -55,8 +55,6 @@
     shell = pkgs.zsh;
   };
 
-  # programs.zsh.enable = true;
-
   hardware.graphics.enable = true;
 
   xdg.portal = {

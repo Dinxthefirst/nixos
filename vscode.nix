@@ -32,6 +32,7 @@
         "editor"."fontLigatures" = true;
         "workbench"."colorTheme" = "Dracula Theme";
         "editor"."minimap"."enabled" = false;
+        "editor"."detectIndentation" = false;
       };
     };
   };

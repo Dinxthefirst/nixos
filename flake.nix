@@ -54,6 +54,7 @@
           ./steam.nix
           ./stremio.nix
           ./latex.nix
+          ./lutris.nix
         ];
       };
     };
