@@ -9,8 +9,8 @@
         james-yu.latex-workshop
         esbenp.prettier-vscode
         ocamllabs.ocaml-platform
-        # azemoh.one-monokai
         dracula-theme.theme-dracula
+        mkhl.direnv
       ];
       userSettings = {
         "editor"."tabSize" = 4;
