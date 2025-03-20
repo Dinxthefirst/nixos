@@ -13,7 +13,6 @@
         mkhl.direnv
       ];
       userSettings = {
-        "editor"."tabSize" = 4;
         "[html, nix, ocaml, json, css, javascript]" = {
           "editor"."tabSize" = 2;
         };
