@@ -3,21 +3,16 @@ set -euo pipefail
 
 CONFIG_DIR="$HOME/.config/nixos"
 NIXOS_LOG_FILE="$CONFIG_DIR/nixos-switch.log"
-GIT_LOG_FILE="$CONFIG_DIR/git.log"
+# GIT_LOG_FILE="$CONFIG_DIR/git.log"
 TARGET=$1
-
-git_log() {
-    echo "> git $*" >> "$GIT_LOG_FILE"
-    git "$@" &>> "$GIT_LOG_FILE"
-}
 
 pushd "$CONFIG_DIR" > /dev/null
 
-git_log diff -U0 --color=always *.nix || true
+git diff -U0 --color=always *.nix || true
 
-git_log ls-files --others --exclude-standard | xargs -r -I {} git_log add {}
+git ls-files --others --exclude-standard | xargs -r git add
 
-echo "NixOS Rebuilding For $TARGET..."
+echo "NixOS Rebuilding for $TARGET..."
 if sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#$TARGET" --option cores 4 &> "$NIXOS_LOG_FILE"; then
     echo "Rebuild successful!"
 else
@@ -26,10 +21,10 @@ else
     exit 1
 fi
 
-if ! git_log diff --quiet; then
+if ! git diff --quiet; then
     gen=$(nixos-rebuild list-generations | awk '/current/ {print $1}')
-    git_log commit -am "NixOS Generation: $gen"
-    git_log push
+    git commit -am "NixOS Generation: $gen"
+    git push
     echo "Changes pushed!"
 else
     echo "No changes to commit."

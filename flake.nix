@@ -35,7 +35,6 @@
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs system;
-          target = "laptop";
         };
         modules = [
           home-manager.nixosModules.home-manager
@@ -49,7 +48,6 @@
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs system;
-          target = "desktop";
         };
         modules = [
           home-manager.nixosModules.home-manager
