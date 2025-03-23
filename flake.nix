@@ -55,6 +55,7 @@
           ./stremio.nix
           ./latex.nix
           ./zsh.nix
+          ./heroic.nix
         ];
       };
     };
