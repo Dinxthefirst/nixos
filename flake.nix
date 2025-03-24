@@ -38,6 +38,7 @@
           ./configuration.nix
           ./hyprland.nix
           ./zsh.nix
+          ./network.nix
         ];
       };
       desktop = nixpkgs.lib.nixosSystem {

@@ -17,6 +17,7 @@
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users.toft = import ./home.nix;
+    backupFileExtension = "backup";
   };
 
   # Set your time zone.
