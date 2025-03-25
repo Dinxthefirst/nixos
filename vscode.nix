@@ -33,6 +33,7 @@
         "editor"."minimap"."enabled" = false;
         "editor"."detectIndentation" = false;
         "workbench"."startupEditor" = "none";
+        "editor"."fontSize" = 16;
       };
     };
   };
