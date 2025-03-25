@@ -39,6 +39,7 @@
           ./hyprland.nix
           ./zsh.nix
           ./network.nix
+          ./latex.nix
         ];
       };
       desktop = nixpkgs.lib.nixosSystem {
