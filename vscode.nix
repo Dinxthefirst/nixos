@@ -32,6 +32,7 @@
         "workbench"."colorTheme" = "Dracula Theme";
         "editor"."minimap"."enabled" = false;
         "editor"."detectIndentation" = false;
+        "workbench"."startupEditor" = "none";
       };
     };
   };
