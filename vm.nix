@@ -15,6 +15,7 @@
   boot.kernelParams = [
     "amd_iommu=on"
     "iommu=pt"
+    "vfio-pci.ids=1002:744c,1002:ab30"
   ];
 
   # Assign user to libvirt & KVM groups
