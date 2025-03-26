@@ -41,8 +41,8 @@ in {
         package = pkgs.qemu_kvm;
         ovmf.enable = true;
         verbatimConfig = ''
-           namespaces = []
-          user = "+${builtins.toString config.users.users.${user}.uid}"
+          namespaces = []
+          user = "${user}"
         '';
       };
     };
