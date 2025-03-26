@@ -31,7 +31,7 @@ in {
     libvirtd = {
       enable = true;
       extraConfig = ''
-        user="${user}"
+        user="toft"
       '';
       # Don't start any VMs automatically on boot.
       onBoot = "ignore";
