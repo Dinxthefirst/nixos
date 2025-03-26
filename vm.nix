@@ -39,7 +39,7 @@ in {
       onShutdown = "shutdown";
       qemu = {
         package = pkgs.qemu_kvm;
-        # ovmf = "enabled";
+        ovmf.enable = true;
         verbatimConfig = ''
            namespaces = []
           user = "+${builtins.toString config.users.users.${user}.uid}"
