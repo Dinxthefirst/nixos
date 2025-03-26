@@ -47,5 +47,5 @@ in {
       };
     };
   };
-  users.users.${user}.extraGroups = ["qemu-libvirtd" "libvirtd" "disk"];
+  users.users.${user}.extraGroups = ["kvm" "libvirtd" "disk"];
 }
