@@ -11,7 +11,7 @@
         ocamllabs.ocaml-platform
         dracula-theme.theme-dracula
         mkhl.direnv
-        ms-python.python
+        ms-python.vscode-pylance
       ];
       userSettings = {
         "[html, nix, ocaml, json, css, javascript]" = {
