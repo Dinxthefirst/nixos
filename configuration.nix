@@ -40,6 +40,7 @@
 
   # Configure keymap in X11
   services.xserver = {
+    synaptics.enable = false;
     libinput = {
       enable = true;
       middleEmulation = false;
