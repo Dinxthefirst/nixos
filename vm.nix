@@ -19,7 +19,7 @@ in {
   # Add a file for looking-glass to use later. This will allow for viewing the guest VM's screen in a
   # performant way.
   systemd.tmpfiles.rules = [
-    "f /dev/shm/looking-glass 0660 ${user} qemu-libvirtd -"
+    "f /dev/shm/looking-glass 0660 ${user} qemu-libvirtd - - - 67108864"
   ];
   # Add virt-manager and looking-glass to use later.
   environment.systemPackages = with pkgs; [
@@ -43,6 +43,8 @@ in {
         verbatimConfig = ''
           namespaces = []
           user = "${user}"
+          memory-backend-file,id=ivshmem,share=on,mem-path=/dev/shm/looking-glass,size=64M
+          device=ivshmem-plain,memdev=ivshmem
         '';
       };
     };
