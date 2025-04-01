@@ -38,7 +38,6 @@
     LC_TIME = "da_DK.UTF-8";
   };
 
-  # Configure keymap in X11
   services.xserver = {
     synaptics.enable = false;
     libinput = {
