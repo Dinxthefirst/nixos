@@ -58,7 +58,6 @@
           ./latex.nix
           ./zsh.nix
           ./heroic.nix
-          ./vm.nix
         ];
       };
     };
