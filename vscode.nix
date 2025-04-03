@@ -35,7 +35,7 @@
         "editor"."detectIndentation" = false;
         "workbench"."startupEditor" = "none";
         "editor"."fontSize" = 16;
-        "editor"."ruler" = "[80, 100]";
+        "editor"."rulers" = "[80, 100]";
       };
     };
   };
