@@ -14,9 +14,12 @@
         ms-python.vscode-pylance
       ];
       userSettings = {
-        "[html, nix, ocaml, json, css, javascript]" = {
-          "editor"."tabSize" = 2;
-        };
+        "[html]" = {"editor"."tabSize" = 2;};
+        "[nix]" = {"editor"."tabSize" = 2;};
+        "[ocaml]" = {"editor"."tabSize" = 2;};
+        "[json]" = {"editor"."tabSize" = 2;};
+        "[css]" = {"editor"."tabSize" = 2;};
+        "[javascript]" = {"editor"."tabSize" = 2;};
         "latex-workshop"."latex"."outDir" = "/tmp/latex-build";
         "editor"."formatOnSave" = true;
         "files"."autoSave" = "onFocusChange";
