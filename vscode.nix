@@ -14,13 +14,9 @@
         ms-python.vscode-pylance
       ];
       userSettings = {
-        "workbench"."colorTheme" = "Dracula Theme";
-        "[html]" = {"editor"."tabSize" = 2;};
-        "[nix]" = {"editor"."tabSize" = 2;};
-        "[ocaml]" = {"editor"."tabSize" = 2;};
-        "json"."editor"."tabSize" = 2;
-        "[css]" = {"editor"."tabSize" = 2;};
-        "[javascript]" = {"editor"."tabSize" = 2;};
+        "[html, nix, ocaml, json, css, javascript]" = {
+          "editor"."tabSize" = 2;
+        };
         "latex-workshop"."latex"."outDir" = "/tmp/latex-build";
         "editor"."formatOnSave" = true;
         "files"."autoSave" = "onFocusChange";
@@ -37,6 +33,7 @@
         "editor"."minimap"."enabled" = false;
         "editor"."detectIndentation" = false;
         "workbench"."startupEditor" = "none";
+        "workbench"."colorTheme" = "Dracula Theme";
         "editor"."fontSize" = 16;
         "editor"."rulers" = "[80, 100]";
       };
