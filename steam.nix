@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -10,6 +14,7 @@
   environment.systemPackages = with pkgs; [
     mangohud
     scarab # hollow knight mod manager
+    inputs.creamlinux.packages.${pkgs.system}.default
   ];
 
   programs.gamemode.enable = true;

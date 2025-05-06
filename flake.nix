@@ -9,6 +9,10 @@
     };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     hyprland.url = "github:hyprwm/Hyprland";
+    creamlinux = {
+      url = "github:Novattz/creamlinux-installer";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -21,6 +25,7 @@
     home-manager,
     zen-browser,
     hyprland,
+    creamlinux,
     ...
   } @ inputs: let
     system = "x86_64-linux";
