@@ -63,6 +63,7 @@
           ./latex.nix
           ./zsh.nix
           ./heroic.nix
+          ./lutris.nix
         ];
       };
     };
