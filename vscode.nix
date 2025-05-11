@@ -13,30 +13,30 @@
         mkhl.direnv
         ms-python.vscode-pylance
       ];
-      userSettings = {
-        "[html, nix, ocaml, json, css, javascript]" = {
-          "editor"."tabSize" = 2;
-        };
-        "latex-workshop"."latex"."outDir" = "/tmp/latex-build";
-        "editor"."formatOnSave" = true;
-        "files"."autoSave" = "onFocusChange";
-        "[jsonc, typescript]" = {
-          "editor"."defaultFormatter" = "esbenp.prettier-vscode";
-        };
-        "latex-workshop"."formatting"."latex" = "latexindent";
-        "[ocaml]" = {
-          "editor"."defaultFormatter" = "ocaml-ocamlformat";
-        };
-        "editor"."minimap.enabled" = false;
-        "editor"."fontFamily" = "'Fira Code'";
-        "editor"."fontLigatures" = true;
-        "editor"."minimap"."enabled" = false;
-        "editor"."detectIndentation" = false;
-        "workbench"."startupEditor" = "none";
-        "workbench"."colorTheme" = "Dracula Theme";
-        "editor"."fontSize" = 16;
-        "editor"."rulers" = "[80, 100]";
-      };
+      #   userSettings = {
+      #     "[html, nix, ocaml, json, css, javascript]" = {
+      #       "editor"."tabSize" = 2;
+      #     };
+      #     "latex-workshop"."latex"."outDir" = "/tmp/latex-build";
+      #     "editor"."formatOnSave" = true;
+      #     "files"."autoSave" = "onFocusChange";
+      #     "[jsonc, typescript]" = {
+      #       "editor"."defaultFormatter" = "esbenp.prettier-vscode";
+      #     };
+      #     "latex-workshop"."formatting"."latex" = "latexindent";
+      #     "[ocaml]" = {
+      #       "editor"."defaultFormatter" = "ocaml-ocamlformat";
+      #     };
+      #     "editor"."minimap.enabled" = false;
+      #     "editor"."fontFamily" = "'Fira Code'";
+      #     "editor"."fontLigatures" = true;
+      #     "editor"."minimap"."enabled" = false;
+      #     "editor"."detectIndentation" = false;
+      #     "workbench"."startupEditor" = "none";
+      #     "workbench"."colorTheme" = "Dracula Theme";
+      #     "editor"."fontSize" = 16;
+      #     "editor"."rulers" = "[80, 100]";
+      #   };
     };
   };
 }
