@@ -14,7 +14,7 @@
         ms-python.vscode-pylance
       ];
       userSettings = {
-        "[html, nix, ocaml, json, css, javascript]" = {
+        "[html, nix, ocaml, json, css, javascript, jsonc, typescript]" = {
           "editor.tabSize" = 2;
         };
         "latex-workshop.latex.outDir" = "/tmp/latex-build";
