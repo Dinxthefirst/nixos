@@ -34,7 +34,7 @@
         "workbench.startupEditor" = "none";
         "workbench.colorTheme" = "Dracula Theme";
         "editor.fontSize" = 16;
-        "editor.ruler" = 80;
+        "editor.rulers" = [80 100];
       };
     };
   };
