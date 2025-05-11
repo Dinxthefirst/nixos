@@ -22,9 +22,14 @@
         };
         "[ocaml]" = {
           "editor.tabSize" = 2;
+          "editor.defaultFormatter" = "ocaml-ocamlformat";
         };
         "[json]" = {
           "editor.tabSize" = 2;
+        };
+        "[jsonc]" = {
+          "editor.tabSize" = 2;
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
         };
         "[css]" = {
           "editor.tabSize" = 2;
@@ -32,25 +37,14 @@
         "[javascript]" = {
           "editor.tabSize" = 2;
         };
-        "[jsonc]" = {
-          "editor.tabSize" = 2;
-        };
         "[typescript]" = {
           "editor.tabSize" = 2;
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
         };
         "latex-workshop.latex.outDir" = "/tmp/latex-build";
         "editor.formatOnSave" = true;
         "files.autoSave" = "onFocusChange";
-        "[jsonc]" = {
-          "editor.defaultFormatter" = "esbenp.prettier-vscode";
-        };
-        "[typescript]" = {
-          "editor.defaultFormatter" = "esbenp.prettier-vscode";
-        };
         "latex-workshop.formatting.latex" = "latexindent";
-        "[ocaml]" = {
-          "editor.defaultFormatter" = "ocaml-ocamlformat";
-        };
         "editor.fontFamily" = "'Fira Code'";
         "editor.fontLigatures" = true;
         "editor.minimap.enabled" = false;
