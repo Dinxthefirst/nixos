@@ -64,6 +64,7 @@
           ./zsh.nix
           ./heroic.nix
           ./lutris.nix
+          ./nodejs.nix
         ];
       };
     };
