@@ -20,7 +20,10 @@
         "latex-workshop.latex.outDir" = "/tmp/latex-build";
         "editor.formatOnSave" = true;
         "files.autoSave" = "onFocusChange";
-        "[jsonc, typescript]" = {
+        "[jsonc]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[typescript]" = {
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
         };
         "latex-workshop.formatting.latex" = "latexindent";
