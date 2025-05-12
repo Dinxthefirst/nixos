@@ -8,6 +8,10 @@ TARGET=$1
 
 pushd "$CONFIG_DIR" > /dev/null
 
+git stash push -u -m "Auto-stash before rebase"
+git pull --rebase
+git stash pop || true
+
 git diff -U0 --color=always *.nix || true
 
 git ls-files --others --exclude-standard | xargs -r git add
