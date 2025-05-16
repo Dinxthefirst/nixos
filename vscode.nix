@@ -41,6 +41,9 @@
           "editor.tabSize" = 2;
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
         };
+        "[svelte]" = {
+          "editor.tabSize" = 2;
+        };
         "latex-workshop.latex.outDir" = "/tmp/latex-build";
         "editor.formatOnSave" = true;
         "files.autoSave" = "onFocusChange";

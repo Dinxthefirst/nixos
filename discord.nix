@@ -1,9 +1,5 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    discord-canary
+    discord
   ];
 }
