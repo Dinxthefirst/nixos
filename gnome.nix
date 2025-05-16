@@ -33,7 +33,7 @@
     gnome-music
     gnome-photos
     gnome-screenshot
-    gnome-system-monitor
+    # gnome-system-monitor
     gnome-weather
     gnome-disk-utility
     pkgs.gnome-connections
