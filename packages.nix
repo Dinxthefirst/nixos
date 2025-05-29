@@ -5,6 +5,5 @@
     vim
     firefox
     fastfetch
-    alejandra
   ];
 }
