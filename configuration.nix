@@ -12,7 +12,7 @@
     ./packages.nix
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  # nix.settings.experimental-features = ["nix-command" "flakes"];
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
