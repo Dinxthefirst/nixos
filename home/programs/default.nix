@@ -3,5 +3,7 @@
     ./vscode
     ./git
     ./direnv
+    ./alacritty
+    ./hypr
   ];
 }
