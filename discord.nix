@@ -8,5 +8,6 @@
       appId = "com.discordapp.Discord";
       origin = "flathub";
     }
+    "com.obsproject.Studio"
   ];
 }
