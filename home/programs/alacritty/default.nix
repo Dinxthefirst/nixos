@@ -7,7 +7,7 @@
   programs.alacritty = {
     settings = {
       font = {
-        size = 15.0;
+        size = 16.0;
         normal = {
           family = "Fira Code";
           style = "Regular";
