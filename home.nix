@@ -9,11 +9,8 @@
 
   home.stateVersion = "25.05";
 
-  # programs.home-manager.enable = true;
-
   home.packages = [
     inputs.zen-browser.packages."x86_64-linux".default
-    # pkgs.home-manager
   ];
 
   nixpkgs.config.allowUnfree = true;
