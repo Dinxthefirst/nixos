@@ -5,6 +5,8 @@
   target,
   ...
 }: {
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ./boot.nix
     ./gc.nix
