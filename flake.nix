@@ -63,8 +63,7 @@
           ./stremio.nix
           ./latex.nix
           ./zsh.nix
-          ./heroic.nix
-          ./lutris.nix
+          ./gaming.nix
           ./nodejs.nix
         ];
       };
