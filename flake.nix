@@ -1,5 +1,5 @@
 {
-  description = "Nixos config flake";
+  description = "NixOS config flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -39,11 +39,11 @@
           home-manager.nixosModules.home-manager
           ./laptop/hardware-configuration.nix
           ./laptop/packages.nix
-          ./configuration.nix
-          ./hyprland.nix
-          ./zsh.nix
-          ./network.nix
-          ./latex.nix
+          ./modules/configuration.nix
+          ./modules/hyprland.nix
+          ./modules/zsh.nix
+          ./modules/network.nix
+          ./modules/latex.nix
         ];
       };
       desktop = nixpkgs.lib.nixosSystem {
@@ -54,17 +54,17 @@
           home-manager.nixosModules.home-manager
           ./desktop/hardware-configuration.nix
           ./desktop/drivers.nix
-          ./configuration.nix
+          ./modules/configuration.nix
           nix-flatpak.nixosModules.nix-flatpak
-          ./flatpak.nix
-          ./gnome.nix
-          ./discord.nix
-          ./steam.nix
-          ./stremio.nix
-          ./latex.nix
-          ./zsh.nix
-          ./gaming.nix
-          ./nodejs.nix
+          ./modules/flatpak.nix
+          ./modules/gnome.nix
+          ./modules/discord.nix
+          ./modules/steam.nix
+          ./modules/stremio.nix
+          ./modules/latex.nix
+          ./modules/zsh.nix
+          ./modules/gaming.nix
+          ./modules/nodejs.nix
         ];
       };
     };
