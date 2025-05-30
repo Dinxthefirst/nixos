@@ -24,9 +24,6 @@
     self,
     nixpkgs,
     home-manager,
-    zen-browser,
-    hyprland,
-    creamlinux,
     nix-flatpak,
     ...
   } @ inputs: let
