@@ -5,5 +5,6 @@
     ./direnv
     ./alacritty
     ./hypr
+    ./zsh
   ];
 }
