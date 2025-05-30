@@ -13,6 +13,7 @@
       url = "github:Novattz/creamlinux-installer";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   nixConfig = {
@@ -26,6 +27,7 @@
     zen-browser,
     hyprland,
     creamlinux,
+    nix-flatpak,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -38,6 +40,7 @@
         };
         modules = [
           home-manager.nixosModules.home-manager
+          nix-flatpak.nixosModules.nix-flatpak
           ./laptop/hardware-configuration.nix
           ./laptop/packages.nix
           ./configuration.nix
@@ -53,6 +56,7 @@
         };
         modules = [
           home-manager.nixosModules.home-manager
+          nix-flatpak.nixosModules.nix-flatpak
           ./desktop/hardware-configuration.nix
           ./desktop/drivers.nix
           ./configuration.nix

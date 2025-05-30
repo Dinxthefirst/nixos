@@ -12,6 +12,8 @@
     ./packages.nix
   ];
 
+  services.flatpak.enable = true;
+
   # nix.settings.experimental-features = ["nix-command" "flakes"];
 
   home-manager = {
