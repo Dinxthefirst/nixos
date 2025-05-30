@@ -4,6 +4,9 @@
   # ];
 
   services.flatpak.packages = [
-    "com.discordapp.Discord"
+    {
+      appId = "com.discordapp.Discord";
+      origin = "flathub";
+    }
   ];
 }

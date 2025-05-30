@@ -40,7 +40,6 @@
         };
         modules = [
           home-manager.nixosModules.home-manager
-          nix-flatpak.nixosModules.nix-flatpak
           ./laptop/hardware-configuration.nix
           ./laptop/packages.nix
           ./configuration.nix
@@ -56,10 +55,11 @@
         };
         modules = [
           home-manager.nixosModules.home-manager
-          nix-flatpak.nixosModules.nix-flatpak
           ./desktop/hardware-configuration.nix
           ./desktop/drivers.nix
           ./configuration.nix
+          nix-flatpak.nixosModules.nix-flatpak
+          ./flatpak.nix
           ./gnome.nix
           ./discord.nix
           ./steam.nix
