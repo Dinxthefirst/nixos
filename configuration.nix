@@ -16,7 +16,7 @@
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
-    users.toft = import ./home.nix;
+    users.toft = import ./home/home.nix;
     backupFileExtension = "backup";
   };
 
