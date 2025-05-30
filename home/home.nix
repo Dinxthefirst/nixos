@@ -7,8 +7,6 @@
   home.username = "toft";
   home.homeDirectory = "/home/toft";
 
-  home.stateVersion = "25.05";
-
   home.packages = [
     inputs.zen-browser.packages."x86_64-linux".default
   ];
@@ -18,4 +16,8 @@
   imports = [
     ./programs
   ];
+
+  programs.home-manager.enable = true;
+
+  home.stateVersion = "25.05";
 }
