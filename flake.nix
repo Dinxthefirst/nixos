@@ -61,6 +61,7 @@
           nix-flatpak.nixosModules.nix-flatpak
           ./flatpak.nix
           ./gnome.nix
+          ./discord.nix
           ./steam.nix
           ./stremio.nix
           ./latex.nix
