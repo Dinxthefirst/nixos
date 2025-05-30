@@ -37,8 +37,8 @@
         };
         modules = [
           home-manager.nixosModules.home-manager
-          ./laptop/hardware-configuration.nix
-          ./laptop/packages.nix
+          ./hosts/laptop/hardware-configuration.nix
+          ./hosts/laptop/packages.nix
           ./modules/configuration.nix
           ./modules/hyprland.nix
           ./modules/zsh.nix
@@ -52,8 +52,8 @@
         };
         modules = [
           home-manager.nixosModules.home-manager
-          ./desktop/hardware-configuration.nix
-          ./desktop/drivers.nix
+          ./hosts/desktop/hardware-configuration.nix
+          ./hosts/desktop/drivers.nix
           ./modules/configuration.nix
           nix-flatpak.nixosModules.nix-flatpak
           ./modules/flatpak.nix
