@@ -1,5 +1,6 @@
 {
   programs.alacritty.settings = {
+    enable = true;
     window.dimensions = {
       lines = 3;
       columns = 200;
