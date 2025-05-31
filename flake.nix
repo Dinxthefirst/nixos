@@ -22,7 +22,6 @@
           ./hosts/laptop/user.nix
           ./modules/system/configuration.nix
           ./modules/hyprland.nix
-          ./modules/zsh.nix
           ./modules/network.nix
           ./modules/latex.nix
         ];
@@ -43,7 +42,6 @@
           ./modules/steam.nix
           ./modules/stremio.nix
           ./modules/latex.nix
-          ./modules/zsh.nix
           ./modules/gaming.nix
           ./modules/nodejs.nix
         ];
