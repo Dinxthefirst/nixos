@@ -1,25 +1,6 @@
 {
   description = "NixOS config flake";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    hyprland.url = "github:hyprwm/Hyprland";
-    creamlinux = {
-      url = "github:Novattz/creamlinux-installer";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
-  };
-
-  nixConfig = {
-    experimental-features = ["nix-command" "flakes"];
-  };
-
   outputs = {
     self,
     nixpkgs,
@@ -68,5 +49,24 @@
         ];
       };
     };
+  };
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    hyprland.url = "github:hyprwm/Hyprland";
+    creamlinux = {
+      url = "github:Novattz/creamlinux-installer";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+  };
+
+  nixConfig = {
+    experimental-features = ["nix-command" "flakes"];
   };
 }
