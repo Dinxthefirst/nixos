@@ -5,7 +5,6 @@
     self,
     nixpkgs,
     home-manager,
-    nix-flatpak,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -62,7 +61,6 @@
           ./hosts/desktop/hardware-configuration.nix
           ./modules/system/configuration.nix
           ./hosts/desktop/user.nix
-          nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           {
             networking.hostName = "nixos";

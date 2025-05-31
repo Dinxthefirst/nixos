@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }:
 with lib; let
@@ -10,6 +11,10 @@ in {
   options = {
     modules.flatpak.enable = mkEnableOption "flatpak";
   };
+
+  imports = [
+    inputs.nix-flatpak.nixosModules.nix-flatpak
+  ];
 
   config = mkIf cfg.enable {
     services.flatpak = {
