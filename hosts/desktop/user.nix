@@ -1,8 +1,6 @@
 {config, ...}: {
   imports = [
     ../../modules
-    ../../modules/latex.nix
-    ../../modules/gaming.nix
     ../../modules/nodejs.nix
   ];
 
@@ -12,5 +10,7 @@
     discord.enable = true;
     steam.enable = true;
     stremio.enable = true;
+    gaming.enable = true;
+    latex.enable = true;
   };
 }

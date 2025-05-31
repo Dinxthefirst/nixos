@@ -5,5 +5,7 @@
     ./discord
     ./steam
     ./stremio
+    ./gaming
+    ./latex
   ];
 }

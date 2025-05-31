@@ -7,6 +7,9 @@
     ../../modules
     ../../modules/hyprland.nix
     ../../modules/network.nix
-    ../../modules/latex.nix
   ];
+
+  config.modules = {
+    latex.enable = true;
+  };
 }
