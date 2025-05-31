@@ -20,7 +20,7 @@
           home-manager.nixosModules.home-manager
           ./hosts/laptop/hardware-configuration.nix
           ./hosts/laptop/user.nix
-          ./modules/configuration.nix
+          ./modules/system/configuration.nix
           ./modules/hyprland.nix
           ./modules/zsh.nix
           ./modules/network.nix
@@ -35,7 +35,7 @@
           home-manager.nixosModules.home-manager
           ./hosts/desktop/hardware-configuration.nix
           ./hosts/desktop/user.nix
-          ./modules/configuration.nix
+          ./modules/system/configuration.nix
           nix-flatpak.nixosModules.nix-flatpak
           ./modules/flatpak.nix
           ./modules/gnome.nix

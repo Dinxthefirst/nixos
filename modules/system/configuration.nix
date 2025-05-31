@@ -2,7 +2,6 @@
   config,
   pkgs,
   inputs,
-  target,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -15,7 +14,7 @@
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
-    users.toft = import ../home/home.nix;
+    users.toft = import ../../home/home.nix;
     backupFileExtension = "backup";
   };
 
@@ -57,7 +56,6 @@
     isNormalUser = true;
     description = "toft";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [];
     shell = pkgs.zsh;
   };
 
