@@ -2,5 +2,6 @@
   imports = [
     ./flatpak
     ./gnome
+    ./discord
   ];
 }
