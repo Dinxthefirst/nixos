@@ -28,6 +28,8 @@
         print -P "%{$fg_bold[blue]%}%~%{$reset_color%}"
       }
 
+      PROMPT="> "
+
       bindkey '^[[1;5D' backward-word
       bindkey '^[[1;5C' forward-word
       bindkey '^[[3~' delete-char
