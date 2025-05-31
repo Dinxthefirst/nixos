@@ -3,5 +3,6 @@
     ./flatpak
     ./gnome
     ./discord
+    ./steam
   ];
 }
