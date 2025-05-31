@@ -56,7 +56,19 @@
               useUserPackages = true;
               useGlobalPkgs = true;
               extraSpecialArgs = {inherit inputs;};
-              users.toft = import ./home/home.nix;
+              users.toft = {
+                imports = [
+                  ./home/programs
+                ];
+                home.username = "toft";
+                home.homeDirectory = "/home/toft";
+
+                home.packages = [
+                  inputs.zen-browser.packages."x86_64-linux".default
+                ];
+
+                home.stateVersion = "25.05";
+              };
               backupFileExtension = "backup";
             };
 
