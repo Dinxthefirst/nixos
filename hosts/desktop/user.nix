@@ -1,6 +1,6 @@
-{
+{config, ...}: {
   imports = [
-    ../../modules/flatpak.nix
+    ../../modules
     ../../modules/gnome.nix
     ../../modules/discord.nix
     ../../modules/steam.nix
@@ -9,4 +9,8 @@
     ../../modules/gaming.nix
     ../../modules/nodejs.nix
   ];
+
+  config.modules = {
+    flatpak.enable = true;
+  };
 }
