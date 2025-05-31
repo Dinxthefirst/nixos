@@ -19,11 +19,8 @@
         modules = [
           home-manager.nixosModules.home-manager
           ./hosts/laptop/hardware-configuration.nix
-          ./hosts/laptop/user.nix
           ./modules/system/configuration.nix
-          ./modules/hyprland.nix
-          ./modules/network.nix
-          ./modules/latex.nix
+          ./hosts/laptop/user.nix
         ];
       };
       desktop = nixpkgs.lib.nixosSystem {
@@ -33,17 +30,9 @@
         modules = [
           home-manager.nixosModules.home-manager
           ./hosts/desktop/hardware-configuration.nix
-          ./hosts/desktop/user.nix
           ./modules/system/configuration.nix
+          ./hosts/desktop/user.nix
           nix-flatpak.nixosModules.nix-flatpak
-          ./modules/flatpak.nix
-          ./modules/gnome.nix
-          ./modules/discord.nix
-          ./modules/steam.nix
-          ./modules/stremio.nix
-          ./modules/latex.nix
-          ./modules/gaming.nix
-          ./modules/nodejs.nix
         ];
       };
     };
