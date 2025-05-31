@@ -12,10 +12,15 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [];
+  boot = {
+    initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "sd_mod"];
+    initrd.kernelModules = [];
+    kernelModules = ["kvm-intel"];
+    extraModulePackages = [];
+    loader.systemd-boot.enable = true;
+    loader.systemd-boot.configurationLimit = 10;
+    loader.efi.canTouchEfiVariables = true;
+  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/f3ee7ecf-e97e-4106-8b53-1b13e66fb008";

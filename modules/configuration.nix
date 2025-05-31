@@ -8,7 +8,6 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    ./boot.nix
     ./gc.nix
     ./fonts.nix
     ./packages.nix

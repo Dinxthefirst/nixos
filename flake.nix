@@ -38,7 +38,7 @@
         modules = [
           home-manager.nixosModules.home-manager
           ./hosts/laptop/hardware-configuration.nix
-          ./hosts/laptop/packages.nix
+          ./hosts/laptop/user.nix
           ./modules/configuration.nix
           ./modules/hyprland.nix
           ./modules/zsh.nix
@@ -53,7 +53,7 @@
         modules = [
           home-manager.nixosModules.home-manager
           ./hosts/desktop/hardware-configuration.nix
-          ./hosts/desktop/drivers.nix
+          ./hosts/desktop/user.nix
           ./modules/configuration.nix
           nix-flatpak.nixosModules.nix-flatpak
           ./modules/flatpak.nix

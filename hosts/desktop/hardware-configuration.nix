@@ -12,10 +12,17 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-amd"];
-  boot.extraModulePackages = [];
+  boot = {
+    initrd.availableKernelModules = ["nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod"];
+    initrd.kernelModules = ["amdgpu"];
+    kernelModules = ["kvm-amd"];
+    extraModulePackages = [];
+    loader.systemd-boot.enable = true;
+    loader.systemd-boot.configurationLimit = 10;
+    loader.efi.canTouchEfiVariables = true;
+  };
+
+  services.xserver.videoDrivers = ["amdgpu"];
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/3c9f2ccc-44ae-4c62-ae2a-c0d58ac341ee";
