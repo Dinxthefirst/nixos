@@ -1,7 +1,6 @@
 {config, ...}: {
   imports = [
     ../../modules
-    ../../modules/gnome.nix
     ../../modules/discord.nix
     ../../modules/steam.nix
     ../../modules/stremio.nix
@@ -12,5 +11,6 @@
 
   config.modules = {
     flatpak.enable = true;
+    gnome.enable = true;
   };
 }
