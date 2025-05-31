@@ -9,6 +9,46 @@
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    # lib = nixpkgs.lib;
+    # mkSystem = pkgs: system: hostname:
+    #   pkgs.lib.nixosSystem {
+    #     specialArgs = {
+    #       inherit inputs system;
+    #     };
+    #     modules = [
+    #       ./hosts/${hostname}/hardware-configuration.nix
+    #       ./modules/system/configuration.nix
+    #       ./hosts/${hostname}/user.nix
+    #       home-manager.nixosModules.home-manager
+    #       {
+    #         networking.hostName = "nixos";
+    #         home-manager = {
+    #           useUserPackages = true;
+    #           useGlobalPkgs = true;
+    #           extraSpecialArgs = {inherit inputs;};
+    #           users.toft = {
+    #             imports = [
+    #               ./home/programs
+    #             ];
+    #             home.username = "toft";
+    #             home.homeDirectory = "/home/toft";
+    #             home.packages = [
+    #               inputs.zen-browser.packages."x86_64-linux".default
+    #             ];
+    #             home.stateVersion = "25.05";
+    #           };
+    #           backupFileExtension = "backup";
+    #         };
+    #         programs.zsh.enable = true;
+    #         users.users.toft = {
+    #           isNormalUser = true;
+    #           description = "toft";
+    #           extraGroups = ["networkmanager" "wheel"];
+    #           shell = pkgs.zsh;
+    #         };
+    #       }
+    #     ];
+    #   };
   in {
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
