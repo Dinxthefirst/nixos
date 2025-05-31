@@ -16,7 +16,7 @@ git diff -U0 --color=always *.nix || true
 git ls-files --others --exclude-standard | xargs -r git add
 
 echo "NixOS Rebuilding for $TARGET..."
-if sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#$TARGET" --option cores 4 &> "$NIXOS_LOG_FILE"; then
+if sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#$TARGET" --accept-flake-config --option cores 4 &> "$NIXOS_LOG_FILE"; then
     echo "Rebuild successful!"
 else
     echo "Rebuild failed. Showing errors:"
