@@ -17,10 +17,28 @@
           inherit inputs system;
         };
         modules = [
-          home-manager.nixosModules.home-manager
           ./hosts/laptop/hardware-configuration.nix
           ./modules/system/configuration.nix
           ./hosts/laptop/user.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useUserPackages = true;
+              useGlobalPkgs = true;
+              extraSpecialArgs = {inherit inputs;};
+              users.toft = import ./home/home.nix;
+              backupFileExtension = "backup";
+            };
+
+            programs.zsh.enable = true;
+
+            users.users.toft = {
+              isNormalUser = true;
+              description = "toft";
+              extraGroups = ["networkmanager" "wheel"];
+              shell = pkgs.zsh;
+            };
+          }
         ];
       };
       desktop = nixpkgs.lib.nixosSystem {
@@ -28,11 +46,29 @@
           inherit inputs system;
         };
         modules = [
-          home-manager.nixosModules.home-manager
           ./hosts/desktop/hardware-configuration.nix
           ./modules/system/configuration.nix
           ./hosts/desktop/user.nix
           nix-flatpak.nixosModules.nix-flatpak
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useUserPackages = true;
+              useGlobalPkgs = true;
+              extraSpecialArgs = {inherit inputs;};
+              users.toft = import ./home/home.nix;
+              backupFileExtension = "backup";
+            };
+
+            programs.zsh.enable = true;
+
+            users.users.toft = {
+              isNormalUser = true;
+              description = "toft";
+              extraGroups = ["networkmanager" "wheel"];
+              shell = pkgs.zsh;
+            };
+          }
         ];
       };
     };
@@ -55,5 +91,7 @@
 
   nixConfig = {
     experimental-features = ["nix-command" "flakes"];
+    allowUnfree = true;
+    trusted-users = ["root" "toft"];
   };
 }

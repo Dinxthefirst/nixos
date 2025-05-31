@@ -3,7 +3,6 @@ set -euo pipefail
 
 CONFIG_DIR="$HOME/.config/nixos"
 NIXOS_LOG_FILE="$CONFIG_DIR/nixos-switch.log"
-# GIT_LOG_FILE="$CONFIG_DIR/git.log"
 TARGET=$1
 
 pushd "$CONFIG_DIR" > /dev/null

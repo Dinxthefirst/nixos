@@ -12,12 +12,6 @@
     ./packages.nix
   ];
 
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users.toft = import ../../home/home.nix;
-    backupFileExtension = "backup";
-  };
-
   # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
 
@@ -50,16 +44,6 @@
 
   # Configure console keymap
   console.keyMap = "dk-latin1";
-
-  programs.zsh.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.toft = {
-    isNormalUser = true;
-    description = "toft";
-    extraGroups = ["networkmanager" "wheel"];
-    shell = pkgs.zsh;
-  };
 
   hardware.graphics.enable = true;
 
