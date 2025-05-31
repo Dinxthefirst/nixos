@@ -4,5 +4,6 @@
     ./gnome
     ./discord
     ./steam
+    ./stremio
   ];
 }
