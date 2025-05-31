@@ -1,7 +1,6 @@
 {config, ...}: {
   imports = [
     ../../modules
-    ../../modules/nodejs.nix
   ];
 
   config.modules = {
@@ -12,5 +11,6 @@
     stremio.enable = true;
     gaming.enable = true;
     latex.enable = true;
+    nodejs.enable = true;
   };
 }

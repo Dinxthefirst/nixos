@@ -1,5 +1,6 @@
 {
   imports = [
+    # ./system
     ./flatpak
     ./gnome
     ./discord
@@ -7,5 +8,8 @@
     ./stremio
     ./gaming
     ./latex
+    ./hyprland
+    ./nodejs
+    ./network
   ];
 }

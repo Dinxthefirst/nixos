@@ -52,6 +52,7 @@
           nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager
           {
+            networking.hostName = "nixos";
             home-manager = {
               useUserPackages = true;
               useGlobalPkgs = true;
