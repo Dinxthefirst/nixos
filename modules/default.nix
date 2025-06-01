@@ -1,6 +1,7 @@
 {
   imports = [
     # ./system
+    ./zen
     ./flatpak
     ./gnome
     ./discord

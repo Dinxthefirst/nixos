@@ -12,6 +12,7 @@
   ];
 
   config.modules = {
+    zen.enable = true;
     latex.enable = true;
     hyprland.enable = true;
     network.enable = true;

@@ -4,6 +4,7 @@
   ];
 
   config.modules = {
+    zen.enable = true;
     flatpak.enable = true;
     gnome.enable = true;
     discord.enable = true;

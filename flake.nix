@@ -56,26 +56,18 @@
           inherit inputs system;
         };
         modules = [
-          ./hosts/laptop/hardware-configuration.nix
           ./modules/system/configuration.nix
+          ./hosts/laptop/hardware-configuration.nix
           ./hosts/laptop/user.nix
           home-manager.nixosModules.home-manager
           {
             networking.hostName = "nixos";
             home-manager = {
               extraSpecialArgs = {inherit inputs;};
-              users.toft = {
-                imports = [
-                  ./home/programs
-                ];
-                home.username = "toft";
-                home.homeDirectory = "/home/toft";
-
-                home.packages = [
-                  inputs.zen-browser.packages."x86_64-linux".default
-                ];
-
-                home.stateVersion = "25.05";
+              users.toft.home = {
+                username = "toft";
+                homeDirectory = "/home/toft";
+                stateVersion = "25.05";
               };
               backupFileExtension = "backup";
             };
@@ -96,23 +88,18 @@
           inherit inputs system;
         };
         modules = [
-          ./hosts/desktop/hardware-configuration.nix
           ./modules/system/configuration.nix
+          ./hosts/desktop/hardware-configuration.nix
           ./hosts/desktop/user.nix
           home-manager.nixosModules.home-manager
           {
             networking.hostName = "nixos";
             home-manager = {
               extraSpecialArgs = {inherit inputs;};
-              users.toft = {
-                home.username = "toft";
-                home.homeDirectory = "/home/toft";
-
-                home.packages = [
-                  inputs.zen-browser.packages."x86_64-linux".default
-                ];
-
-                home.stateVersion = "25.05";
+              users.toft.home = {
+                username = "toft";
+                homeDirectory = "/home/toft";
+                stateVersion = "25.05";
               };
               backupFileExtension = "backup";
             };
