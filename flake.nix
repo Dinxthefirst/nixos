@@ -21,6 +21,7 @@
           ./hosts/${hostname}/user.nix
           home-manager.nixosModules.home-manager
           {
+            nixpkgs.config.allowUnfree = true;
             networking.hostName = "nixos";
             home-manager = {
               extraSpecialArgs = {inherit inputs;};
