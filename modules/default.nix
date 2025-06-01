@@ -16,5 +16,6 @@
     ./zsh
     ./vscode
     ./direnv
+    ./vm
   ];
 }
