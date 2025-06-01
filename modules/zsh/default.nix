@@ -48,6 +48,8 @@ in {
 
           PROMPT="> "
 
+          autoload -Uz compinit
+          compinit
           zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
           bindkey '^[[1;5D' backward-word
@@ -55,6 +57,14 @@ in {
           bindkey '^[[3~' delete-char
           bindkey '^[[3;5~' kill-word
           bindkey '^H' backward-kill-word
+
+          mkcd() {
+            mkdir -p "$1"
+            cd "$1"
+          }
+          pdf() {
+            zen-browser "$1" &
+          }
         '';
 
         history = {
