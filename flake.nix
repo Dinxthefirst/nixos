@@ -63,8 +63,6 @@
           {
             networking.hostName = "nixos";
             home-manager = {
-              useUserPackages = true;
-              useGlobalPkgs = true;
               extraSpecialArgs = {inherit inputs;};
               users.toft = {
                 imports = [
@@ -105,8 +103,6 @@
           {
             networking.hostName = "nixos";
             home-manager = {
-              useUserPackages = true;
-              useGlobalPkgs = true;
               extraSpecialArgs = {inherit inputs;};
               users.toft = {
                 imports = [
@@ -155,7 +151,6 @@
 
   nixConfig = {
     experimental-features = ["nix-command" "flakes"];
-    allowUnfree = true;
     trusted-users = ["root" "toft"];
   };
 }
