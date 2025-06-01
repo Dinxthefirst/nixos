@@ -67,6 +67,7 @@
 
   nixConfig = {
     experimental-features = ["nix-command" "flakes"];
+    allowUnfree = true;
     trusted-users = ["root" "toft"];
   };
 }
