@@ -8,6 +8,10 @@
 with lib; let
   cfg = config.modules.hyprland;
 in {
+  imports = [
+    ./alacritty.nix
+  ];
+
   options = {
     modules.hyprland.enable = mkEnableOption "hyprland";
   };
@@ -19,6 +23,8 @@ in {
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     };
 
+    modules.alacritty.enable = true;
+
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
       MOZ_ENABLE_WAYLAND = "1";
@@ -27,7 +33,6 @@ in {
 
     environment.systemPackages = with pkgs; [
       waybar
-      alacritty
       hyprpaper
       rofi-wayland
     ];
