@@ -105,9 +105,6 @@
             home-manager = {
               extraSpecialArgs = {inherit inputs;};
               users.toft = {
-                imports = [
-                  ./home/programs
-                ];
                 home.username = "toft";
                 home.homeDirectory = "/home/toft";
 
