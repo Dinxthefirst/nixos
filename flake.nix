@@ -21,7 +21,7 @@
           ./hosts/${hostname}/user.nix
           home-manager.nixosModules.home-manager
           {
-            networking.hostName = hostname;
+            networking.hostName = "nixos";
             home-manager = {
               extraSpecialArgs = {inherit inputs;};
               users.toft.home = {
@@ -41,34 +41,7 @@
       };
   in {
     nixosConfigurations = {
-      laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-        };
-        modules = [
-          ./modules/system/configuration.nix
-          ./hosts/laptop/hardware-configuration.nix
-          ./hosts/laptop/user.nix
-          home-manager.nixosModules.home-manager
-          {
-            networking.hostName = "nixos";
-            home-manager = {
-              extraSpecialArgs = {inherit inputs;};
-              users.toft.home = {
-                username = "toft";
-                homeDirectory = "/home/toft";
-                stateVersion = "25.05";
-              };
-              backupFileExtension = "backup";
-            };
-
-            users.users.toft = {
-              isNormalUser = true;
-              extraGroups = ["networkmanager" "wheel"];
-            };
-          }
-        ];
-      };
+      laptop = mkConfig "laptop";
       desktop = mkConfig "desktop";
     };
   };
