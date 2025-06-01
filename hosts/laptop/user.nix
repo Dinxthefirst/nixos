@@ -16,5 +16,6 @@
     hyprland.enable = true;
     network.enable = true;
     git.enable = true;
+    zsh.enable = true;
   };
 }

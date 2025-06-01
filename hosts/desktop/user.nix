@@ -13,5 +13,6 @@
     latex.enable = true;
     nodejs.enable = true;
     git.enable = true;
+    zsh.enable = true;
   };
 }

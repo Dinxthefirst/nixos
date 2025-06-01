@@ -120,13 +120,10 @@
               backupFileExtension = "backup";
             };
 
-            programs.zsh.enable = true;
-
             users.users.toft = {
               isNormalUser = true;
               description = "toft";
               extraGroups = ["networkmanager" "wheel"];
-              shell = pkgs.zsh;
             };
           }
         ];

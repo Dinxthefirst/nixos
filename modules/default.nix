@@ -12,5 +12,6 @@
     ./nodejs
     ./network
     ./git
+    ./zsh
   ];
 }
