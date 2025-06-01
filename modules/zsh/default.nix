@@ -60,7 +60,7 @@ in {
             mkdir -p "$1"
             cd "$1"
           }
-          pdf() {
+          web() {
             zen-browser "$1" &
           }
           np() {
