@@ -14,5 +14,6 @@
     nodejs.enable = true;
     git.enable = true;
     zsh.enable = true;
+    vscode.enable = true;
   };
 }

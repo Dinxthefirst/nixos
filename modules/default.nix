@@ -13,5 +13,6 @@
     ./network
     ./git
     ./zsh
+    ./vscode
   ];
 }
