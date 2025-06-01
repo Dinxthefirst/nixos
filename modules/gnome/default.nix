@@ -21,6 +21,9 @@ in {
     environment.systemPackages = with pkgs; [
       gnome-tweaks
       gnome-extension-manager
+      gnomeExtensions.blur-my-shell
+      gnomeExtensions.appindicator
+      gnomeExtensions.clipboard-indicator
     ];
 
     environment.gnome.excludePackages = with pkgs; [
