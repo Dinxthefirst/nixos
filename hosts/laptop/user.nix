@@ -15,5 +15,6 @@
     latex.enable = true;
     hyprland.enable = true;
     network.enable = true;
+    git.enable = true;
   };
 }

@@ -11,5 +11,6 @@
     ./hyprland
     ./nodejs
     ./network
+    ./git
   ];
 }

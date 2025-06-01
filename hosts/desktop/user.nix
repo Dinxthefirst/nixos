@@ -12,5 +12,6 @@
     gaming.enable = true;
     latex.enable = true;
     nodejs.enable = true;
+    git.enable = true;
   };
 }
