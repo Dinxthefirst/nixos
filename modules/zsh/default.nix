@@ -63,6 +63,9 @@ in {
           pdf() {
             zen-browser "$1" &
           }
+          np() {
+            nix-shell -p "$1" --extra-experimental-features flakes
+          }
         '';
 
         history = {
