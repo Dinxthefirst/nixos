@@ -48,8 +48,6 @@ in {
 
           PROMPT="> "
 
-          autoload -Uz compinit
-          compinit
           zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
           bindkey '^[[1;5D' backward-word
