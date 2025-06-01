@@ -1,12 +1,12 @@
 {
   description = "NixOS config flake";
 
-  outputs = {
+  outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
     ...
-  } @ inputs: let
+  }: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
     # lib = nixpkgs.lib;
@@ -53,7 +53,7 @@
     nixosConfigurations = {
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs system;
+          inherit inputs;
         };
         modules = [
           ./modules/system/configuration.nix
@@ -72,20 +72,16 @@
               backupFileExtension = "backup";
             };
 
-            programs.zsh.enable = true;
-
             users.users.toft = {
               isNormalUser = true;
-              description = "toft";
               extraGroups = ["networkmanager" "wheel"];
-              shell = pkgs.zsh;
             };
           }
         ];
       };
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs system;
+          inherit inputs;
         };
         modules = [
           ./modules/system/configuration.nix
@@ -106,7 +102,6 @@
 
             users.users.toft = {
               isNormalUser = true;
-              description = "toft";
               extraGroups = ["networkmanager" "wheel"];
             };
           }
