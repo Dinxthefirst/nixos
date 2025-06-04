@@ -17,5 +17,6 @@
     zsh.enable = true;
     vscode.enable = true;
     direnv.enable = true;
+    obsidian.enable = true;
   };
 }

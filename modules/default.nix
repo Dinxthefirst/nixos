@@ -17,5 +17,6 @@
     ./vscode
     ./direnv
     ./vm
+    ./obsidian
   ];
 }
