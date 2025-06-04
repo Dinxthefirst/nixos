@@ -57,5 +57,15 @@ in {
       gnome-disk-utility
       pkgs.gnome-connections
     ];
+
+    home-manager.users.toft.dconf.settings = {
+      "org/gnome/desktop/wm/keybindings" = {
+        switch-to-workspace-1 = ["<Super>1"];
+        switch-to-workspace-2 = ["<Super>2"];
+        switch-to-workspace-3 = ["<Super>3"];
+        switch-to-workspace-4 = ["<Super>4"];
+        switch-to-workspace-5 = ["<Super>5"];
+      };
+    };
   };
 }
