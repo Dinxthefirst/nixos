@@ -65,6 +65,7 @@ in {
         switch-to-workspace-3 = ["<Super>3"];
         switch-to-workspace-4 = ["<Super>4"];
         switch-to-workspace-5 = ["<Super>5"];
+        close = ["<Super>q"];
       };
     };
   };
