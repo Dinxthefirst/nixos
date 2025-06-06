@@ -18,5 +18,6 @@
     ./direnv
     ./vm
     ./obsidian
+    ./minecraft
   ];
 }

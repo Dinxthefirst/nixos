@@ -18,5 +18,6 @@
     vscode.enable = true;
     direnv.enable = true;
     obsidian.enable = true;
+    minecraft.enable = true;
   };
 }
