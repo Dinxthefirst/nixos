@@ -12,6 +12,7 @@ in {
   };
 
   config = mkIf cfg.enable {
+    nixpkgs.config.allowUnfree = true;
     home-manager.users.toft = {
       nixpkgs.config.allowUnfree = true;
       programs.vscode = {
