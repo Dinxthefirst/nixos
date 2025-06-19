@@ -14,7 +14,8 @@
     modules = {
       zen.enable = true;
       latex.enable = true;
-      hyprland.enable = true;
+      hyprland.enable = false;
+      gnome.enable = true;
       network.enable = true;
       git.enable = true;
       zsh.enable = true;
