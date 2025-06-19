@@ -12,8 +12,9 @@ in {
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [
-      pkgs.gparted
+    environment.systemPackages = with pkgs; [
+      gparted
+      ntfs3g
     ];
   };
 }
