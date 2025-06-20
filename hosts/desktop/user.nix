@@ -20,6 +20,6 @@
     obsidian.enable = true;
     minecraft.enable = true;
     gparted.enable = true;
-    vm.enable = true;
+    vm.enable = false;
   };
 }
