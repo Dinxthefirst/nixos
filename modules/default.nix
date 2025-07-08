@@ -20,5 +20,6 @@
     ./obsidian
     ./minecraft
     ./gparted
+    ./godot
   ];
 }

@@ -21,5 +21,6 @@
     minecraft.enable = true;
     gparted.enable = true;
     vm.enable = false;
+    godot.enable = true;
   };
 }
