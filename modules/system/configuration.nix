@@ -48,7 +48,10 @@
   # Configure console keymap
   console.keyMap = "dk-latin1";
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   xdg.portal = {
     enable = true;

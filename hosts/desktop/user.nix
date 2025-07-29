@@ -4,10 +4,6 @@
   ];
 
   config = {
-    hardware.opengl = {
-      enable = true;
-      driSupport32Bit = true;
-    };
     environment.variables = {
       ROC_ENABLE_PRE_VEGA = "1";
     };
