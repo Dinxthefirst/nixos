@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 with lib; let
@@ -11,6 +12,9 @@ in {
   };
 
   config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      diff-so-fancy
+    ];
     home-manager.users.toft = {
       programs.git = {
         enable = true;
