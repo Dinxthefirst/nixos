@@ -20,7 +20,7 @@
       direnv.enable = true;
       obsidian.enable = true;
       minecraft.enable = true;
-      gparted.enable = true;
+      gparted.enable = false;
       vm.enable = false;
       godot.enable = true;
       unity.enable = true;
