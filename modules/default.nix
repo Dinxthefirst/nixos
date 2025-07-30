@@ -21,5 +21,6 @@
     ./minecraft
     ./gparted
     ./godot
+    ./unity
   ];
 }

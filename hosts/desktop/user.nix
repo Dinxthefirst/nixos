@@ -4,9 +4,6 @@
   ];
 
   config = {
-    environment.variables = {
-      ROC_ENABLE_PRE_VEGA = "1";
-    };
     modules = {
       zen.enable = true;
       flatpak.enable = true;
@@ -26,6 +23,7 @@
       gparted.enable = true;
       vm.enable = false;
       godot.enable = true;
+      unity.enable = true;
     };
   };
 }
