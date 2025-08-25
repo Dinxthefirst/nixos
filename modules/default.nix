@@ -22,5 +22,6 @@
     ./gparted
     ./godot
     ./unity
+    ./docker
   ];
 }

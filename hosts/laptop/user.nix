@@ -22,6 +22,7 @@
       vscode.enable = true;
       direnv.enable = true;
       obsidian.enable = true;
+      docker.enable = true;
     };
   };
 }
