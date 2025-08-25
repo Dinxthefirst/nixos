@@ -15,5 +15,6 @@ in {
     virtualisation.docker = {
       enable = true;
     };
+    users.users.toft.extraGroups = ["docker"];
   };
 }
