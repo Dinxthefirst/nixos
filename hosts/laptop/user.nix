@@ -23,6 +23,7 @@
       direnv.enable = true;
       obsidian.enable = true;
       docker.enable = true;
+      flatpak.enable = true;
     };
   };
 }
