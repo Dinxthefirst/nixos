@@ -60,6 +60,9 @@ in {
             "[svelte]" = {
               "editor.tabSize" = 2;
             };
+            "[scala]" = {
+              "editor.tabSize" = 2;
+            };
             "latex-workshop.latex.outDir" = "/tmp/latex-build";
             "editor.formatOnSave" = true;
             "files.autoSave" = "onFocusChange";
