@@ -72,6 +72,10 @@ in {
             "workbench.colorTheme" = "Dracula Theme";
             "editor.fontSize" = 16;
             "editor.rulers" = [80];
+            "files.watcherExclude" = {
+              "**/.bloop" = true;
+              "**/.metals" = true;
+            };
           };
         };
       };
