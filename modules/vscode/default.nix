@@ -62,6 +62,7 @@ in {
             };
             "[scala]" = {
               "editor.tabSize" = 2;
+              "editor.defaultFormatter" = "scalafmt";
             };
             "latex-workshop.latex.outDir" = "/tmp/latex-build";
             "editor.formatOnSave" = true;
