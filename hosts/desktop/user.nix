@@ -10,10 +10,10 @@
       gnome.enable = true;
       discord.enable = true;
       steam.enable = true;
-      stremio.enable = true;
+      stremio.enable = false;
       gaming.enable = true;
       latex.enable = true;
-      nodejs.enable = true;
+      nodejs.enable = false;
       git.enable = true;
       zsh.enable = true;
       vscode.enable = true;
@@ -22,9 +22,9 @@
       minecraft.enable = true;
       gparted.enable = true;
       vm.enable = false;
-      godot.enable = true;
-      unity.enable = true;
-      docker.enable = true;
+      godot.enable = false;
+      unity.enable = false;
+      docker.enable = false;
     };
   };
 }
