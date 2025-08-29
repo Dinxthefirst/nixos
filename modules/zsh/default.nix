@@ -29,7 +29,7 @@ in {
 
         shellAliases = {
           c = "clear";
-          config = "code ~/.config/nixos";
+          config = "~/.config/nixos";
           rebuild = "~/.config/nixos/rebuild.sh";
           p = "ping archlinux.org";
           ls = "ls --color=auto -v";
