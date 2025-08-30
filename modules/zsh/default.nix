@@ -50,7 +50,7 @@ in {
           gco = "git checkout";
         };
 
-        initExtra = ''
+        initContent = ''
           fastfetch -c ~/.config/fastfetch/config.json -l nixos_small
 
           autoload -U colors && colors

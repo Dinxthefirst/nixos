@@ -15,10 +15,8 @@
     ./packages.nix
   ];
 
-  # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -33,15 +31,17 @@
     LC_TIME = "da_DK.UTF-8";
   };
 
-  services.xserver = {
-    synaptics.enable = false;
+  services = {
     libinput = {
       enable = true;
-      middleEmulation = false;
     };
-    xkb = {
-      layout = "dk";
-      variant = "nodeadkeys";
+    xserver = {
+      libinput.middleEmulation = false;
+      synaptics.enable = false;
+      xkb = {
+        layout = "dk";
+        variant = "nodeadkeys";
+      };
     };
   };
 

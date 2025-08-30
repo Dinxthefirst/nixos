@@ -80,6 +80,9 @@ in {
               "**/.bloop" = true;
               "**/.metals" = true;
             };
+            "github.copilot.enable" = {
+              "*" = false;
+            };
           };
         };
       };
