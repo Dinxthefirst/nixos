@@ -7,6 +7,7 @@
     home-manager,
     ...
   }: let
+    user = "toft";
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
 
@@ -25,15 +26,15 @@
             networking.hostName = "nixos";
             home-manager = {
               extraSpecialArgs = {inherit inputs;};
-              users.toft.home = {
-                username = "toft";
-                homeDirectory = "/home/toft";
+              users.${user}.home = {
+                username = "${user}";
+                homeDirectory = "/home/${user}";
                 stateVersion = "25.11";
               };
               backupFileExtension = "backup";
             };
 
-            users.users.toft = {
+            users.users.${user} = {
               isNormalUser = true;
               extraGroups = ["networkmanager" "wheel"];
             };
