@@ -21,13 +21,14 @@
           ./hosts/${hostname}/user.nix
           home-manager.nixosModules.home-manager
           {
+            system.stateVersion = "25.11";
             networking.hostName = "nixos";
             home-manager = {
               extraSpecialArgs = {inherit inputs;};
               users.toft.home = {
                 username = "toft";
                 homeDirectory = "/home/toft";
-                stateVersion = "25.05";
+                stateVersion = "25.11";
               };
               backupFileExtension = "backup";
             };
