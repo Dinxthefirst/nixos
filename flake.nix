@@ -21,7 +21,6 @@
           ./hosts/${hostname}/user.nix
           home-manager.nixosModules.home-manager
           {
-            system.stateVersion = "25.11";
             networking.hostName = "nixos";
             home-manager = {
               extraSpecialArgs = {inherit inputs;};
@@ -58,7 +57,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    # creamlinux.url = "github:Novattz/creamlinux-installer";
+    # creamlinux = {
+    #   url = "github:Novattz/creamlinux-installer";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 

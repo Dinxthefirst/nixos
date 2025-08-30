@@ -34,9 +34,9 @@
   services = {
     libinput = {
       enable = true;
+      touchpad.middleEmulation = false;
     };
     xserver = {
-      libinput.middleEmulation = false;
       synaptics.enable = false;
       xkb = {
         layout = "dk";
