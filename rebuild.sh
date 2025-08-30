@@ -2,7 +2,7 @@
 set -euo pipefail
 
 CONFIG_DIR="$HOME/.config/nixos"
-NIXOS_LOG_FILE="$CONFIG_DIR/nixos-switch.log"
+NIXOS_LOG_FILE="$CONFIG_DIR/rebuild.log"
 TARGET=$1
 
 pushd "$CONFIG_DIR" > /dev/null
@@ -28,7 +28,7 @@ else
 fi
 
 if ! git diff --quiet; then
-    gen=$(nixos-rebuild list-generations | awk '/current/ {print $1}')
+    gen=$(nixos-rebuild list-generations | awk '/Generation/{getline; print $1}')
     git commit -am "NixOS Generation: $gen"
     git push
     echo "Changes pushed!"
