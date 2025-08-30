@@ -2,9 +2,11 @@
   pkgs,
   lib,
   config,
+  user,
   ...
 }:
 with lib; let
+  user = "toft";
   cfg = config.modules.zsh;
 in {
   options = {
@@ -14,9 +16,9 @@ in {
   config = mkIf cfg.enable {
     programs.zsh.enable = true;
 
-    users.users.toft.shell = pkgs.zsh;
+    users.users.${user}.shell = pkgs.zsh;
 
-    home-manager.users.toft = {
+    home-manager.users.${user} = {
       home.packages = [
         pkgs.zsh
       ];
