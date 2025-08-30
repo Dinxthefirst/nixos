@@ -24,7 +24,7 @@
       vm.enable = false;
       godot.enable = false;
       unity.enable = false;
-      docker.enable = false;
+      docker.enable = true;
     };
   };
 }
