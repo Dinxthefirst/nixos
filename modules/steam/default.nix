@@ -25,7 +25,7 @@ in {
 
     environment.systemPackages = with pkgs; [
       mangohud
-      # scarab # hollow knight mod manager
+      scarab # hollow knight mod manager
       # inputs.creamlinux.packages.${pkgs.system}.default
     ];
 
