@@ -81,6 +81,9 @@ in {
           np() {
             NIXPKGS_ALLOW_UNFREE=1 nix-shell -p "$1" --extra-experimental-features flakes
           }
+          nd() {
+            nix develop $1 --command zsh
+          }
         '';
 
         history = {
