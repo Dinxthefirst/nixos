@@ -16,7 +16,7 @@ git diff -U0 --color=always *.nix || true
 git ls-files --others --exclude-standard | xargs -r git add
 
 echo "Updating flake inputs..."
-nix flake update --accept-flake-config
+nix flake update --accept-flake-config > /dev/null
 
 echo "NixOS Rebuilding for $TARGET..."
 if sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#$TARGET" --accept-flake-config --option cores 4 &> "$NIXOS_LOG_FILE"; then
