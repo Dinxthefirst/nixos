@@ -64,7 +64,7 @@ in {
               "editor.tabSize" = 2;
               "editor.defaultFormatter" = "scalameta.metals";
             };
-            "[Coq]" = {
+            "[coq]" = {
               "editor.tabSize" = 2;
             };
             "latex-workshop.latex.outDir" = "/tmp/latex-build";
