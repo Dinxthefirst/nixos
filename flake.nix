@@ -59,10 +59,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    # creamlinux = {
-    #   url = "github:Novattz/creamlinux-installer";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    creamlinux = {
+      url = "github:Novattz/creamlinux-installer/17ad517a459f1a41a40bef2642ee952859147ab5";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
