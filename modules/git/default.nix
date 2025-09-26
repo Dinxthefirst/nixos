@@ -58,7 +58,7 @@ in {
             };
             branch = {
               current = "magenta";
-              local = "deafult";
+              local = "default";
               remote = "yellow";
               upstream = "green";
               plain = "blue";
