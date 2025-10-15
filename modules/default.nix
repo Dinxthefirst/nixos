@@ -23,5 +23,6 @@
     ./godot
     ./unity
     ./docker
+    ./cockatrice
   ];
 }

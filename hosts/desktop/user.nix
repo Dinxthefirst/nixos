@@ -25,6 +25,7 @@
       godot.enable = false;
       unity.enable = false;
       docker.enable = false;
+      cockatrice.enable = true;
     };
   };
 }
