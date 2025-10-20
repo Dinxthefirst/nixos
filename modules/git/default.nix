@@ -18,9 +18,9 @@ in {
     home-manager.users.toft = {
       programs.git = {
         enable = true;
-        userName = "Oliver Toft";
-        userEmail = "olivertoftk@live.dk";
-        extraConfig = {
+        settings = {
+          user.name = "Oliver Toft";
+          user.email = "olivertoftk@live.dk";
           init.defaultBranch = "main";
           push.autoSetupRemote = true;
           push.default = "current";
