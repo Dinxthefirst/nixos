@@ -13,7 +13,7 @@ in {
 
   config = mkIf cfg.enable {
     networking.networkmanager.enable = true;
-    systemd.services.NetworkManager-wait-online.enable = false;
+    systemd.services."NetworkManager-wait-online".enable = false;
     environment.systemPackages = with pkgs; [
       networkmanager-openvpn
     ];
