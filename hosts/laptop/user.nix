@@ -24,6 +24,8 @@
       obsidian.enable = true;
       docker.enable = true;
       flatpak.enable = true;
+      nvim.enable = true;
+      tmux.enable = true;
     };
   };
 }
