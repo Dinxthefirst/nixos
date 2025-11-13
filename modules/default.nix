@@ -25,5 +25,6 @@
     ./docker
     ./cockatrice
     ./neovim
+    ./tmux
   ];
 }

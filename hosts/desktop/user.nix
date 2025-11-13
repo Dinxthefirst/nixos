@@ -27,6 +27,7 @@
       docker.enable = false;
       cockatrice.enable = false;
       neovim.enable = true;
+      tmux.enable = true;
     };
   };
 }
