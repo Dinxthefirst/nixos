@@ -24,5 +24,6 @@
     ./unity
     ./docker
     ./cockatrice
+    ./neovim
   ];
 }

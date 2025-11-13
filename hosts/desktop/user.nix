@@ -24,8 +24,9 @@
       vm.enable = false;
       godot.enable = false;
       unity.enable = false;
-      docker.enable = true;
-      cockatrice.enable = true;
+      docker.enable = false;
+      cockatrice.enable = false;
+      neovim.enable = true;
     };
   };
 }
