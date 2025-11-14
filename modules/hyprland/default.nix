@@ -63,7 +63,7 @@ in {
 
       programs.waybar = {
         enable = true;
-        style = "~/.config/nixos/modules/hyprland/style.css";
+        style = "${pkgs.runtimeShell} ./style.css";
         settings.main = {
           layer = "top";
           height = 35;
