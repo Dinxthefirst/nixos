@@ -63,6 +63,7 @@ in {
 
       programs.waybar = {
         enable = true;
+        style = "./styles.css";
         settings.main = {
           layer = "top";
           height = 35;
