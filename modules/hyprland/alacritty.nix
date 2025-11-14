@@ -17,7 +17,7 @@ in {
         enable = true;
         settings = {
           font = {
-            size = 16.0;
+            size = 24.0;
             # normal = {
             #   family = "Fira Nerd Code";
             #   style = "Regular";
