@@ -32,9 +32,40 @@ in {
     };
 
     environment.systemPackages = with pkgs; [
-      waybar
       hyprpaper
-      rofi-wayland
+      rofi
     ];
+
+    home-manager.users.toft = {
+      wayland.windowManager.hyprland.settings = {
+        "monitor" = "eDP-1, 2256x1504@60.00, 0x0, 1";
+
+        "$terminal" = "alacritty";
+        "$menu" = "wofi --show drun";
+        "$browser" = "zen";
+
+        "exec-once" = "waybar";
+
+        decoration = {
+          shadow_offset = "0 5";
+          "col.shadow" = "rgba(00000099)";
+        };
+
+        "$mod" = "SUPER";
+
+        bindm = [
+          # mouse movements
+          "$mod, mouse:272, movewindow"
+          "$mod, mouse:273, resizewindow"
+          "$mod ALT, mouse:272, resizewindow"
+        ];
+      };
+      programs.waybar = {
+        enable = true;
+        settings.main = {
+          modules-right = ["clock"];
+        };
+      };
+    };
   };
 }

@@ -14,8 +14,8 @@
     modules = {
       zen.enable = true;
       latex.enable = false;
-      hyprland.enable = false;
-      gnome.enable = true;
+      hyprland.enable = true;
+      gnome.enable = false;
       network.enable = true;
       git.enable = true;
       zsh.enable = true;
@@ -23,7 +23,7 @@
       direnv.enable = true;
       obsidian.enable = true;
       docker.enable = false;
-      flatpak.enable = true;
+      flatpak.enable = false;
       neovim.enable = true;
       tmux.enable = true;
     };
