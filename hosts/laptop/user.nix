@@ -22,9 +22,9 @@
       vscode.enable = true;
       direnv.enable = true;
       obsidian.enable = true;
-      docker.enable = true;
+      docker.enable = false;
       flatpak.enable = true;
-      nvim.enable = true;
+      neovim.enable = true;
       tmux.enable = true;
     };
   };
