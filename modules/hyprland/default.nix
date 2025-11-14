@@ -63,7 +63,7 @@ in {
 
       programs.waybar = {
         enable = true;
-        style = "${pkgs.runtimeShell} ./style.css";
+        style = "/home/toft/.config/nixos/modules/hyprland/style.css";
         settings.main = {
           layer = "top";
           height = 35;
