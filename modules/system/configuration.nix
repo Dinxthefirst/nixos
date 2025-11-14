@@ -57,4 +57,6 @@
     enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
+
+  programs.mepo.locationBackends.geoclue = false;
 }

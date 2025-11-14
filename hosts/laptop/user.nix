@@ -13,7 +13,7 @@
     ];
     modules = {
       zen.enable = true;
-      latex.enable = true;
+      latex.enable = false;
       hyprland.enable = false;
       gnome.enable = true;
       network.enable = true;

@@ -12,7 +12,7 @@
       steam.enable = true;
       stremio.enable = true;
       gaming.enable = true;
-      latex.enable = true;
+      latex.enable = false;
       nodejs.enable = false;
       git.enable = true;
       zsh.enable = true;
