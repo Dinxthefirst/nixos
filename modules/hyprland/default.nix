@@ -63,7 +63,7 @@ in {
       programs.waybar = {
         enable = true;
         settings.main = {
-          modules-right = ["battery" "network"];
+          modules-right = ["network" "battery"];
           modules-center = ["clock"];
           modules-left = ["hyprland/workspaces"];
 
@@ -77,13 +77,6 @@ in {
             disable-scroll = true;
             all-outputs = true;
             format = "{icon}";
-            format-icons = {
-              "1" = "󰈹";
-              "2" = "";
-              "3" = "";
-              "4" = "";
-              "5" = "";
-            };
           };
 
           "clock" = {
