@@ -63,7 +63,34 @@ in {
       programs.waybar = {
         enable = true;
         settings.main = {
-          modules-right = ["clock"];
+          modules-right = ["battery" "network"];
+          modules-center = ["clock"];
+          modules-left = ["hyprland/workspaces"];
+
+          # Waybar settings
+          layer = "top";
+          height = 35;
+          spacing = 4;
+
+          # Module-specific settings
+          "hyprland/workspaces" = {
+            disable-scroll = true;
+            all-outputs = true;
+            format = "{icon}";
+            format-icons = {
+              "1" = "󰈹";
+              "2" = "";
+              "3" = "";
+              "4" = "";
+              "5" = "";
+            };
+          };
+
+          "clock" = {
+            format = "{:%H:%M}";
+            format-alt = "{:%Y-%m-%d}";
+            tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          };
         };
       };
     };

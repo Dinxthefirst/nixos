@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
-    font-awesome
+    nerd-fonts.symbols-only
     noto-fonts
   ];
 }
