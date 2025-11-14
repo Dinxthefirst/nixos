@@ -63,7 +63,15 @@ in {
 
       programs.waybar = {
         enable = true;
-        style = "/home/toft/.config/nixos/modules/hyprland/style.css";
+        # /home/toft/.config/nixos/modules/hyprland/style.css
+        style = ''
+          #waybar {
+            background: transparent;
+            color: #ff6200ff;
+            margin: 0px;
+            font-weight: 500;
+          }
+        '';
         settings.main = {
           layer = "top";
           height = 35;
