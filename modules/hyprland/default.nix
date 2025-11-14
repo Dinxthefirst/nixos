@@ -41,7 +41,7 @@ in {
         "monitor" = "eDP-1, 2256x1504@60.00, 0x0, 1";
 
         "$terminal" = "alacritty";
-        "$menu" = "wofi --show drun";
+        "$menu" = "rofi --show drun";
         "$browser" = "zen";
 
         "exec-once" = "waybar";
@@ -60,29 +60,104 @@ in {
           "$mod ALT, mouse:272, resizewindow"
         ];
       };
+
       programs.waybar = {
         enable = true;
         settings.main = {
-          modules-right = ["network" "battery"];
-          modules-center = ["clock"];
-          modules-left = ["hyprland/workspaces"];
-
-          # Waybar settings
           layer = "top";
           height = 35;
           spacing = 4;
 
-          # Module-specific settings
+          modules-left = [
+            "hyprland/workspaces"
+            "cpu"
+          ];
+          modules-center = ["clock"];
+          modules-right = [
+            "bluetooth"
+            "network"
+            "pulseaudio"
+            "backlight"
+            "battery"
+          ];
+
           "hyprland/workspaces" = {
-            disable-scroll = true;
-            all-outputs = true;
-            format = "{icon}";
+            format = "{name}: {icon}";
+            format-icons = {
+              active = "";
+              default = "";
+            };
           };
 
-          "clock" = {
-            format = "{:%H:%M}";
-            format-alt = "{:%Y-%m-%d}";
-            tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          bluetooth = {
+            format = "󰂲";
+            "format-on" = "{icon}";
+            "format-off" = "{icon}";
+            "format-connected" = "{icon}";
+            "format-icons" = {
+              on = "󰂯";
+              off = "󰂲";
+              connected = "󰂱";
+            };
+            "on-click" = "blueman-manager";
+            "tooltip-format-connected" = "{device_enumerate}";
+          };
+
+          clock = {
+            timezone = "Europe/Copenhagen";
+            tooltip = false;
+            format = "{:%H:%M:%S  -  %A, %d}";
+            interval = 1;
+          };
+
+          network = {
+            "format-wifi" = "󰤢";
+            "format-disconnected" = "󰤠";
+            interval = 5;
+            "tooltip-format" = "{essid} ({signalStrength}%)";
+            "on-click" = "nm-connection-editor";
+          };
+
+          cpu = {
+            interval = 1;
+            format = "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%";
+            "format-icons" = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+            "on-click" = "ghostty -e htop";
+          };
+
+          memory = {
+            interval = 30;
+            format = "  {used:0.1f}G/{total:0.1f}G";
+            "tooltip-format" = "Memory";
+          };
+
+          backlight = {
+            format = "{icon}  {percent}%";
+            "format-icons" = ["" "󰃜" "󰃛" "󰃞" "󰃝" "󰃟" "󰃠"];
+            tooltip = false;
+          };
+
+          pulseaudio = {
+            format = "{icon}  {volume}%";
+            "format-muted" = "";
+            "format-icons" = {
+              default = ["" "" ""];
+            };
+            "on-click" = "pavucontrol";
+          };
+
+          battery = {
+            interval = 2;
+            states = {
+              warning = 30;
+              critical = 15;
+            };
+            format = "{icon}  {capacity}%";
+            "format-full" = "{icon}  {capacity}%";
+            "format-charging" = " {capacity}%";
+            "format-plugged" = " {capacity}%";
+            "format-alt" = "{icon} {time}";
+            "format-icons" = ["" "" "" "" ""];
           };
         };
       };
