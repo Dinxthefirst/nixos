@@ -17,7 +17,7 @@ in {
         enable = true;
         settings = {
           font = {
-            size = 24.0;
+            size = 16.0;
             # normal = {
             #   family = "Fira Nerd Code";
             #   style = "Regular";
@@ -36,16 +36,16 @@ in {
             # };
           };
 
-          # window = {
-          #   opacity = 0.7;
-          # };
+          window = {
+            opacity = 0.7;
+          };
 
-          # colors = {
-          #   primary = {
-          #     background = "#000000";
-          #     foreground = "#FFFFFF";
-          #   };
-          # };
+          colors = {
+            primary = {
+              background = "#000000";
+              foreground = "#FFFFFF";
+            };
+          };
         };
       };
     };
