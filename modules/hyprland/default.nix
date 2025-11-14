@@ -63,12 +63,12 @@ in {
 
       programs.waybar = {
         enable = true;
-        # /home/toft/.config/nixos/modules/hyprland/style.css
         style = ./style.css;
         settings.main = {
           layer = "top";
-          height = 35;
-          spacing = 4;
+          position = "top";
+          spacing = 0;
+          height = 34;
 
           modules-left = [
             "hyprland/workspaces"
