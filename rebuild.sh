@@ -36,6 +36,7 @@ done
 
 if [ -z "$TARGET" ]; then
   echo "Error: Target (-t) is required."
+  Help
   exit 1
 fi
 

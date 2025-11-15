@@ -5,5 +5,6 @@
     fastfetch
     alejandra
     pavucontrol
+    killall
   ];
 }

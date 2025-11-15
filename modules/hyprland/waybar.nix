@@ -5,10 +5,10 @@
   ...
 }:
 with lib; let
-  cfg = config.modules.hyprland;
+  cfg = config.modules.waybar;
 in {
   options = {
-    modules.hyprland.enable = mkEnableOption "hyprland";
+    modules.waybar.enable = mkEnableOption "waybar";
   };
 
   config = mkIf cfg.enable {

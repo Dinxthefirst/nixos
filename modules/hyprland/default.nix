@@ -10,6 +10,7 @@ with lib; let
 in {
   imports = [
     ./alacritty.nix
+    ./waybar.nix
   ];
 
   options = {
@@ -23,7 +24,10 @@ in {
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     };
 
-    modules.alacritty.enable = true;
+    modules = {
+      alacritty.enable = true;
+      waybar.enable = true;
+    };
 
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
@@ -59,6 +63,8 @@ in {
           "$mod, mouse:272, movewindow"
           "$mod, mouse:273, resizewindow"
           "$mod ALT, mouse:272, resizewindow"
+          "$mainMod CTRL, W, exec, killall waybar"
+          "$mainMod CTRL, W, exec, waybar &"
         ];
       };
     };
