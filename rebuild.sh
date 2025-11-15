@@ -13,7 +13,7 @@ Help()
     # Display Help
     echo "NixOS rebuild script."
     echo
-    echo "Syntax: $0 -t <target> [-u]"
+    echo "Syntax: $0 -t <target> [-u] [-v]"
     echo "options:"
     echo "t     Build target: what target the system should build to."
     echo "u     Update flakes: updates the flakes in nix configuration."
@@ -21,7 +21,7 @@ Help()
     echo
 }
 
-while getopts "t:u" opt; do
+while getopts "t:uv" opt; do
   case $opt in
     t)
       TARGET="$OPTARG"
