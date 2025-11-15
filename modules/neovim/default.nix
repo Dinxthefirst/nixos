@@ -15,6 +15,9 @@ in {
     home-manager.users.toft = {
       programs.neovim = {
         enable = true;
+        viAlias = true;
+        vimAlias = true;
+        extraConfig = lib.fileContents ./init.lua;
       };
     };
   };
