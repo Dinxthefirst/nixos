@@ -17,9 +17,13 @@ in {
         enable = true;
         viAlias = true;
         vimAlias = true;
+        plugins = with pkgs; [
+          vimPlugins.rose-pine
+        ];
       };
       home.file.".config/nvim/init.lua".source = ./init.lua;
       home.file.".config/nvim/lua/options.lua".source = ./lua/options.lua;
+      home.file.".config/nvim/lua/themes.lua".source = ./lua/themes.lua;
     };
   };
 }
