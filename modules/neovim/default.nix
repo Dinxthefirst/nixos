@@ -17,6 +17,9 @@ in {
         enable = true;
         viAlias = true;
         vimAlias = true;
+        extraConfig = ''
+          luafile ~/.config/nvim/settings.lua
+        '';
       };
       home.file.".config/nvim/settings.lua".source = ./init.lua;
     };
