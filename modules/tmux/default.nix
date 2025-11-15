@@ -15,6 +15,10 @@ in {
     programs.tmux = {
       enable = true;
       clock24 = true;
+      baseIndex = 1;
+      extraConfig = ''
+        # used for less common options, intelligently combines if defined in multiple places.
+      '';
     };
   };
 }
