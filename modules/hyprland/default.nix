@@ -35,6 +35,9 @@ in {
       WLR_NO_HARDWARE_CURSORS = "1";
     };
 
+    programs.hyprlock.enable = true;
+    services.hypridle.enable = true;
+
     environment.systemPackages = with pkgs; [
       hyprpaper
       kdePackages.dolphin
@@ -59,7 +62,6 @@ in {
         "$mod" = "SUPER";
 
         bindm = [
-          # mouse movements
           "$mod, mouse:272, movewindow"
           "$mod, mouse:273, resizewindow"
           "$mod ALT, mouse:272, resizewindow"
