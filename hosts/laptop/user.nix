@@ -26,6 +26,7 @@
       flatpak.enable = false;
       neovim.enable = true;
       tmux.enable = true;
+      bluetooth.enable = true;
     };
   };
 }

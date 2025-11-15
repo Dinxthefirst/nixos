@@ -24,9 +24,10 @@ in {
 
           modules-left = [
             "hyprland/workspaces"
-            "cpu"
           ];
-          modules-center = ["clock"];
+          modules-center = [
+            "clock"
+          ];
           modules-right = [
             "bluetooth"
             "network"

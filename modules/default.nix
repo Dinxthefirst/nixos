@@ -26,5 +26,6 @@
     ./cockatrice
     ./neovim
     ./tmux
+    ./bluetooth
   ];
 }
