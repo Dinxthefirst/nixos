@@ -3,7 +3,41 @@ set -euo pipefail
 
 CONFIG_DIR="$HOME/.config/nixos"
 NIXOS_LOG_FILE="$CONFIG_DIR/rebuild.log"
-TARGET=$1
+
+TARGET=""
+UPDATE_FLAKES=false
+
+Help()
+{
+   # Display Help
+   echo "NixOS rebuild script."
+   echo
+   echo "Syntax: $0 -t <target> [-u]"
+   echo "options:"
+   echo "t     The target that the system should build to."
+   echo "u     If the rebuild should update the flakes."
+   echo
+}
+
+while getopts "t:u" opt; do
+  case $opt in
+    t)
+      TARGET="$OPTARG"
+      ;;
+    u)
+      UPDATE_FLAKES=true
+      ;;
+    *)
+      Help
+      exit 1
+      ;;
+  esac
+done
+
+if [ -z "$TARGET" ]; then
+  echo "Error: Target (-t) is required."
+  exit 1
+fi
 
 pushd "$CONFIG_DIR" > /dev/null
 
@@ -15,8 +49,10 @@ git diff -U0 --color=always *.nix || true
 
 git ls-files --others --exclude-standard | xargs -r git add
 
-echo "Updating flake inputs..."
-nix flake update --accept-flake-config > /dev/null
+if [ "$UPDATE_FLAKES" = true ]; then
+    echo "Updating flake inputs..."
+    nix flake update --accept-flake-config > /dev/null
+fi
 
 echo "NixOS Rebuilding for $TARGET..."
 if sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#$TARGET" --accept-flake-config --option cores 4 &> "$NIXOS_LOG_FILE"; then
@@ -29,7 +65,7 @@ fi
 
 if ! git diff --quiet; then
     gen=$(nixos-rebuild list-generations | awk '/Generation/{getline; print $1}')
-    git commit -am "NixOS Generation: $gen"
+    git commit -am "NixOS Generation: $TARGET $gen"
     git push
     echo "Changes pushed!"
 else
