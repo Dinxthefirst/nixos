@@ -7,30 +7,51 @@ NIXOS_LOG_FILE="$CONFIG_DIR/rebuild.log"
 TARGET=""
 UPDATE_FLAKES=false
 VERBOSE=false
+PUSH=true
 
 Help()
 {
     # Display Help
     echo "NixOS rebuild script."
     echo
-    echo "Syntax: $0 -t <target> [-u] [-v]"
+    echo "Syntax: $0 -t <target> [-u] [-v] [--no-push]"
     echo "options:"
     echo "t     Build target: what target the system should build to."
     echo "u     Update flakes: updates the flakes in nix configuration."
     echo "v     Verbose output: show build logs in the terminal."
+    echo "--no-push  Do not push changes to the repository."
     echo
 }
 
-while getopts "t:uv" opt; do
-  case $opt in
-    t)
-      TARGET="$OPTARG"
+TEMP=$(getopt -o t:uv --long no-push -n "$0" -- "$@")
+if [ $? != 0 ]; then
+    echo "Error in arguments" >&2
+    Help
+    exit 1
+fi
+eval set -- "$TEMP"
+
+while true; do
+  case "$1" in
+    -t)
+      TARGET="$2"
+      shift 2
       ;;
-    u)
+    -u)
       UPDATE_FLAKES=true
+      shift
       ;;
-    v)
+    -v)
       VERBOSE=true
+      shift
+      ;;
+    --no-push)
+      PUSH=false
+      shift
+      ;;
+    --)
+      shift
+      break
       ;;
     *)
       Help
@@ -84,8 +105,12 @@ fi
 if ! git diff --quiet; then
     gen=$(nixos-rebuild list-generations | awk '/Generation/{getline; print $1}')
     git commit -am "NixOS Generation: $TARGET $gen"
-    git push
-    echo "Changes pushed!"
+    if [ "$PUSH" = true ]; then
+        git push
+        echo "Changes pushed!"
+    else
+        echo "Changes commited but not pushed."
+    fi
 else
     echo "No changes to commit."
 fi
