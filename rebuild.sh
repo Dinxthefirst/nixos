@@ -6,17 +6,19 @@ NIXOS_LOG_FILE="$CONFIG_DIR/rebuild.log"
 
 TARGET=""
 UPDATE_FLAKES=false
+VERBOSE=false
 
 Help()
 {
-   # Display Help
-   echo "NixOS rebuild script."
-   echo
-   echo "Syntax: $0 -t <target> [-u]"
-   echo "options:"
-   echo "t     The target that the system should build to."
-   echo "u     If the rebuild should update the flakes."
-   echo
+    # Display Help
+    echo "NixOS rebuild script."
+    echo
+    echo "Syntax: $0 -t <target> [-u]"
+    echo "options:"
+    echo "t     Build target: what target the system should build to."
+    echo "u     Update flakes: updates the flakes in nix configuration."
+    echo "v     Verbose output: show build logs in the terminal."
+    echo
 }
 
 while getopts "t:u" opt; do
@@ -26,6 +28,9 @@ while getopts "t:u" opt; do
       ;;
     u)
       UPDATE_FLAKES=true
+      ;;
+    v)
+      VERBOSE=true
       ;;
     *)
       Help
@@ -56,12 +61,24 @@ if [ "$UPDATE_FLAKES" = true ]; then
 fi
 
 echo "NixOS Rebuilding for $TARGET..."
-if sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#$TARGET" --accept-flake-config --option cores 4 &> "$NIXOS_LOG_FILE"; then
-    echo "Rebuild successful!"
+
+if $VERBOSE; then
+    sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#$TARGET" --accept-flake-config --option cores 4 2>&1 | tee "$NIXOS_LOG_FILE"
+    REBUILD_EXIT_STATUS=${PIPESTATUS[0]}
 else
-    echo "Rebuild failed. Showing errors:"
-    grep --color -i -A3 "error" "$NIXOS_LOG_FILE" || cat "$NIXOS_LOG_FILE"
+    sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#$TARGET" --accept-flake-config --option cores 4 &> "$NIXOS_LOG_FILE"
+    REBUILD_EXIT_STATUS=$?
+fi
+
+if [ $REBUILD_EXIT_STATUS -ne 0 ]; then
+    echo "Rebuild failed. "
+    if ! $VERBOSE; then
+        echo "Showing errors:"
+        grep --color -i -A3 "error" "$NIXOS_LOG_FILE" || cat "$NIXOS_LOG_FILE"
+    fi
     exit 1
+else
+    echo "Rebuild successful!"
 fi
 
 if ! git diff --quiet; then
