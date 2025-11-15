@@ -42,6 +42,7 @@ in {
       hyprpaper
       kdePackages.dolphin
       rofi
+      hyprshot
     ];
 
     home-manager.users.toft = {
