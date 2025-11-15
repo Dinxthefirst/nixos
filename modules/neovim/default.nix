@@ -17,8 +17,8 @@ in {
         enable = true;
         viAlias = true;
         vimAlias = true;
-        extraConfig = lib.fileContents ./init.lua;
       };
+      home.file.".config/nvim/settings.lua".source = ./init.lua;
     };
   };
 }
