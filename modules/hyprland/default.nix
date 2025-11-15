@@ -45,30 +45,9 @@ in {
     ];
 
     home-manager.users.toft = {
-      wayland.windowManager.hyprland.settings = {
-        "monitor" = "eDP-1, 2256x1504@60.00, 0x0, 1";
-
-        "$terminal" = "alacritty";
-        "$menu" = "rofi --show drun";
-        "$browser" = "zen";
-
-        "exec-once" = "waybar";
-
-        decoration = {
-          shadow_offset = "0 5";
-          "col.shadow" = "rgba(00000099)";
-        };
-
-        "$mod" = "SUPER";
-
-        bindm = [
-          "$mod, mouse:272, movewindow"
-          "$mod, mouse:273, resizewindow"
-          "$mod ALT, mouse:272, resizewindow"
-          "$mainMod CTRL, W, exec, killall waybar"
-          "$mainMod CTRL, W, exec, waybar &"
-        ];
-      };
+      home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
+      home.file.".config/hypr/monitors.conf".source = ./monitors.conf;
+      home.file.".config/hypr/bindings.conf".source = ./bindings.conf;
     };
   };
 }
