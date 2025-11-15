@@ -32,6 +32,7 @@ in {
           userSettings = {
             "[html]" = {
               "editor.tabSize" = 2;
+              "editor.defaultFormatter" = "ocaml-ocamlformat";
             };
             "[nix]" = {
               "editor.tabSize" = 2;
