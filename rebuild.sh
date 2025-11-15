@@ -112,7 +112,15 @@ if ! git diff --quiet; then
         echo "Changes commited but not pushed."
     fi
 else
-    echo "No changes to commit."
+    echo "No new changes to commit."
+    if git rev-list --quiet HEAD@{upstream}..HEAD; then
+        if [ "$PUSH" = true ]; then
+            git push
+            echo "Unpushed commits pushed!"
+        else
+            echo "Unpushed commits exist but not pushed."
+        fi
+    fi
 fi
 
 popd > /dev/null
