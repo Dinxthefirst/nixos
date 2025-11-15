@@ -19,6 +19,7 @@ in {
         vimAlias = true;
       };
       home.file.".config/nvim/init.lua".source = ./init.lua;
+      home.file.".config/nvim/lua/options.lua".source = ./lua/options.lua;
     };
   };
 }
