@@ -12,6 +12,7 @@ in {
   };
 
   config = mkIf cfg.enable {
+    environment.variables.EDITOR = "nvim";
     home-manager.users.toft = {
       programs.neovim = {
         enable = true;
