@@ -15,7 +15,7 @@ in {
   config = mkIf cfg.enable {
     home-manager.users.toft = {
       home.packages = [
-        inputs.zen-browser.packages."x86_64-linux".twilight
+        inputs.zen-browser.packages."x86_64-linux".default
       ];
     };
   };
