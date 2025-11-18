@@ -60,8 +60,9 @@ in {
 
           clock = {
             timezone = "Europe/Copenhagen";
-            tooltip = false;
+            interval = 1;
             format = "{:%H:%M:%S  -  %A, %Y-%m-%d}";
+            tooltip-format = "<tt><small>{calendar}</small></tt>";
             calendar = {
               mode = "year";
               mode-mon-col = 3;
@@ -75,8 +76,14 @@ in {
                 weekdays = "<span color='#ffcc66'><b>{}</b></span>";
                 today = "<span color='#ff6699'><b><u>{}</u></b></span>";
               };
+              actions = {
+                on-click-right = "mode";
+                on-click-forward = "tz_up";
+                on-click-backward = "tz_down";
+                on-scroll-up = "shift_up";
+                on-scroll-down = "shift_down";
+              };
             };
-            interval = 1;
           };
 
           network = {
