@@ -78,6 +78,9 @@ in {
           switch-to-workspace-5 = ["<Super>5"];
           close = ["<Super>q"];
         };
+        "org/gnome/desktop/input-sources" = {
+          xkb-options = ["lv3:lalt_switch"];
+        };
         # "org/gnome/settings-daemon/plugins/media-keys" = {
         #   custom-keybindings = [
         #     "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
