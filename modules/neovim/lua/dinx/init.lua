@@ -1,0 +1,6 @@
+require("options")
+require("remaps")
+require("plugin.colors")
+require("plugin.telescope")
+require("plugin.treesitter")
+require("plugin.undotree")
