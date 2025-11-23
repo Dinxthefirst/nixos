@@ -41,7 +41,7 @@
       xkb = {
         layout = "dk";
         variant = "nodeadkeys";
-        options = "ctrl:lctrl_alt";
+        options = "ctrl:swapcaps";
       };
     };
   };
