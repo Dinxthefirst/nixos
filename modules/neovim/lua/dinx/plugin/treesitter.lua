@@ -18,4 +18,6 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+
+  parser_install_dir = vim.fn.stdpath("data") .. "/nvim-treesitter/parsers",
 }
