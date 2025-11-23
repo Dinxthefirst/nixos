@@ -1,5 +1,5 @@
-require("options")
-require("remaps")
+require("dinx.options")
+require("dinx.remaps")
 require("plugin.colors")
 require("plugin.telescope")
 require("plugin.treesitter")
