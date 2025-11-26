@@ -61,7 +61,7 @@ in {
           clock = {
             timezone = "Europe/Copenhagen";
             interval = 1;
-            format = "{:%H:%M:%S  -  %A, %Y-%m-%d}";
+            format = "{:%H:%M:%S  -  %A  -  %Y-%m-%d}";
             tooltip-format = "<tt><small>{calendar}</small></tt>";
             calendar = {
               mode = "year";
@@ -132,7 +132,7 @@ in {
             "format-full" = "{icon}  {capacity}%";
             "format-charging" = " {capacity}%";
             "format-plugged" = " {capacity}%";
-            "format-alt" = "{icon} {time}";
+            "format-alt" = "{icon}  {time}";
             "format-icons" = ["" "" "" "" ""];
           };
         };
