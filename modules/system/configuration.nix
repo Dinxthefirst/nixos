@@ -41,7 +41,6 @@
       xkb = {
         layout = "dk";
         variant = "nodeadkeys";
-        options = "caps:escape_shifted_capslock";
       };
     };
   };
