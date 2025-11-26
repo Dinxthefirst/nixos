@@ -87,6 +87,7 @@ in {
             "github.copilot.enable" = {
               "*" = false;
             };
+            "zig.zls.enabled" = "on";
           };
         };
       };
