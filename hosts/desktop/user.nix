@@ -19,7 +19,7 @@
       vscode.enable = true;
       direnv.enable = true;
       obsidian.enable = true;
-      minecraft.enable = false;
+      minecraft.enable = true;
       gparted.enable = true;
       vm.enable = false;
       godot.enable = false;
