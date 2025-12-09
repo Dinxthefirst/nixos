@@ -13,7 +13,7 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      prismlauncher-unwrapped
+      prismlauncher
       javaPackages.compiler.openjdk25
     ];
   };
