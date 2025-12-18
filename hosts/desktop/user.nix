@@ -28,6 +28,7 @@
       cockatrice.enable = false;
       neovim.enable = true;
       tmux.enable = true;
+      nvtop.enable = true;
     };
   };
 }

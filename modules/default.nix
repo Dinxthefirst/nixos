@@ -27,5 +27,6 @@
     ./neovim
     ./tmux
     ./bluetooth
+    ./nvtop
   ];
 }
