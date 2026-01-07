@@ -22,14 +22,14 @@
           ./hosts/${hostname}/user.nix
           home-manager.nixosModules.home-manager
           {
-            system.stateVersion = "25.11";
+            system.stateVersion = "26.05";
             networking.hostName = "nixos";
             home-manager = {
               extraSpecialArgs = {inherit inputs;};
               users.${user}.home = {
                 username = "${user}";
                 homeDirectory = "/home/${user}";
-                stateVersion = "25.11";
+                stateVersion = "26.05";
               };
               backupFileExtension = "backup";
             };

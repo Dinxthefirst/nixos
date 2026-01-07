@@ -4,26 +4,26 @@ set -euo pipefail
 CONFIG_DIR="$HOME/.config/nixos"
 NIXOS_LOG_FILE="$CONFIG_DIR/rebuild.log"
 
-TARGET=""
+TARGET="$1"
 UPDATE_FLAKES=false
 VERBOSE=false
 PUSH=true
+BOOT=false
 
 Help()
 {
-    # Display Help
     echo "NixOS rebuild script."
     echo
-    echo "Syntax: $0 -t <target> [-u] [-v] [--no-push]"
+    echo "Syntax: $0 <target> [-u] [-v] [-b] [--no-push]"
     echo "options:"
-    echo "t     Build target: what target the system should build to."
-    echo "u     Update flakes: updates the flakes in nix configuration."
-    echo "v     Verbose output: show build logs in the terminal."
-    echo "--no-push  Do not push changes to the repository."
+    echo "u             Update flakes: updates the flakes in nix configuration."
+    echo "v             Verbose output: show build logs in the terminal."
+    echo "--boot        Boot: Use 'nixos-rebuild boot' instead of 'nixos-rebuild switch'."
+    echo "--no-push     No Push: Do not push changes to the repository."
     echo
 }
 
-TEMP=$(getopt -o t:uv --long no-push -n "$0" -- "$@")
+TEMP=$(getopt -o uvb --long no-push -n "$0" -- "$@")
 if [ $? != 0 ]; then
     echo "Error in arguments" >&2
     Help
@@ -33,16 +33,16 @@ eval set -- "$TEMP"
 
 while true; do
   case "$1" in
-    -t)
-      TARGET="$2"
-      shift 2
-      ;;
     -u)
       UPDATE_FLAKES=true
       shift
       ;;
     -v)
       VERBOSE=true
+      shift
+      ;;
+    -b)
+      BOOT=true
       shift
       ;;
     --no-push)
@@ -59,12 +59,6 @@ while true; do
       ;;
   esac
 done
-
-if [ -z "$TARGET" ]; then
-  echo "Error: Target (-t) is required."
-  Help
-  exit 1
-fi
 
 pushd "$CONFIG_DIR" > /dev/null
 
@@ -83,11 +77,17 @@ fi
 
 echo "NixOS Rebuilding for $TARGET..."
 
+if $BOOT; then
+    REBUILD="nixos-rebuild boot"
+else
+    REBUILD="nixos-rebuild switch"
+fi
+
 if $VERBOSE; then
-    sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#$TARGET" --accept-flake-config --option cores 4 2>&1 | tee "$NIXOS_LOG_FILE"
+    sudo $REBUILD --upgrade --flake "$CONFIG_DIR#$TARGET" --accept-flake-config --option cores 4 2>&1 | tee "$NIXOS_LOG_FILE"
     REBUILD_EXIT_STATUS=${PIPESTATUS[0]}
 else
-    sudo nixos-rebuild switch --upgrade --flake "$CONFIG_DIR#$TARGET" --accept-flake-config --option cores 4 &> "$NIXOS_LOG_FILE"
+    sudo $REBUILD --upgrade --flake "$CONFIG_DIR#$TARGET" --accept-flake-config --option cores 4 &> "$NIXOS_LOG_FILE"
     REBUILD_EXIT_STATUS=$?
 fi
 
