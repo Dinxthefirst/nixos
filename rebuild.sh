@@ -18,7 +18,7 @@ Help()
     echo "options:"
     echo "u             Update flakes: updates the flakes in nix configuration."
     echo "v             Verbose output: show build logs in the terminal."
-    echo "--boot        Boot: Use 'nixos-rebuild boot' instead of 'nixos-rebuild switch'."
+    echo "-b            Boot: Use 'nixos-rebuild boot' instead of 'nixos-rebuild switch'."
     echo "--no-push     No Push: Do not push changes to the repository."
     echo
 }
