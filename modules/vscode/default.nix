@@ -88,6 +88,11 @@ in {
               "*" = false;
             };
             "zig.zls.enabled" = "on";
+            "[tlaplus]" = {
+              "editor.codeActionsOnSave" = {
+                "source" = true;
+              };
+            };
           };
         };
       };
