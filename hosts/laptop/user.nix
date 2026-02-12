@@ -27,6 +27,7 @@
       neovim.enable = true;
       tmux.enable = true;
       bluetooth.enable = true;
+      vm.enable = true;
     };
   };
 }
