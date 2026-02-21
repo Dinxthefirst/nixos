@@ -31,7 +31,7 @@ in {
       home.file.".config/nvim/lua/dinx/remaps.lua".source = ./lua/dinx/remaps.lua;
       home.file.".config/nvim/lua/dinx/plugin/colors.lua".source = ./lua/dinx/plugin/colors.lua;
       home.file.".config/nvim/lua/dinx/plugin/telescope.lua".source = ./lua/dinx/plugin/telescope.lua;
-      home.file.".config/nvim/lua/dinx/plugin/treesitter.lua".source = ./lua/dinx/plugin/treesitter.lua;
+      # home.file.".config/nvim/lua/dinx/plugin/treesitter.lua".source = ./lua/dinx/plugin/treesitter.lua;
       home.file.".config/nvim/lua/dinx/plugin/undotree.lua".source = ./lua/dinx/plugin/undotree.lua;
     };
   };
