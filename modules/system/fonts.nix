@@ -4,5 +4,6 @@
     nerd-fonts.fira-code
     nerd-fonts.symbols-only
     noto-fonts
+    font-awesome
   ];
 }
