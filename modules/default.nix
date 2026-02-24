@@ -28,6 +28,7 @@
     ./tmux
     ./bluetooth
     ./nvtop
+    ./typst
   ];
   # imports = builtins.map (name: ./${name}) (builtins.attrNames (builtins.filter (name: type: type == "directory") (builtins.readDir ./)));
 }

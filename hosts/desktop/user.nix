@@ -24,11 +24,12 @@
       vm.enable = false;
       godot.enable = false;
       unity.enable = false;
-      docker.enable = true;
+      docker.enable = false;
       cockatrice.enable = false;
       neovim.enable = true;
       tmux.enable = true;
       nvtop.enable = true;
+      typst.enable = true;
     };
   };
 }
