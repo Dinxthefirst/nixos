@@ -9,6 +9,8 @@
     "flakes"
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ./gc.nix
     ./fonts.nix
