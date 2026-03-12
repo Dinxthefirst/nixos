@@ -7,6 +7,7 @@
 }:
 with lib; let
   cfg = config.modules.hyprland;
+  hostname = config.networking.hostname;
 in {
   imports = [
     ./waybar.nix
@@ -45,7 +46,7 @@ in {
 
     home-manager.users.toft = {
       home.file.".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
-      home.file.".config/hypr/monitors.conf".source = ./hypr/monitors.conf;
+      home.file.".config/hypr/monitors.conf".source = ./hypr/${hostname}/monitors.conf;
       home.file.".config/hypr/bindings.conf".source = ./hypr/bindings.conf;
       home.file.".config/hypr/input.conf".source = ./hypr/input.conf;
       home.file.".config/hypr/look.conf".source = ./hypr/look.conf;
