@@ -19,7 +19,7 @@ in {
         enableZshIntegration = true;
 
         settings = {
-          theme = "light:Rose Pine Dawn, dark:Rose Pine";
+          theme = "Rose Pine";
           background-opacity = "0.75";
           font-family = "FiraCode Nerd Font Mono";
           font-size = "16";
