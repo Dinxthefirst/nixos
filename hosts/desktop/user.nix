@@ -30,6 +30,7 @@
       tmux.enable = true;
       nvtop.enable = true;
       typst.enable = true;
+      ghostty.enable = true;
     };
   };
 }
