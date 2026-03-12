@@ -3,11 +3,12 @@
   lib,
   config,
   inputs,
+  specialArgs,
   ...
 }:
 with lib; let
   cfg = config.modules.hyprland;
-  hostname = config.networking.hostname;
+  hostname = specialArgs.hostname;
 in {
   imports = [
     ./waybar.nix
