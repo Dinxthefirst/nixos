@@ -22,6 +22,7 @@ in {
           theme = "Abernathy";
           background-opacity = "0.75";
           font-family = "FiraCode Nerd Font Mono";
+          font-size = "16px";
         };
       };
     };
