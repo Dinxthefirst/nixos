@@ -28,6 +28,8 @@
       tmux.enable = true;
       bluetooth.enable = true;
       vm.enable = true;
+      alacritty.enable = true;
+      ghostty.enable = true;
     };
   };
 }

@@ -9,7 +9,6 @@ with lib; let
   cfg = config.modules.hyprland;
 in {
   imports = [
-    ./alacritty.nix
     ./waybar.nix
   ];
 
@@ -25,7 +24,6 @@ in {
     };
 
     modules = {
-      alacritty.enable = true;
       waybar.enable = true;
     };
 
