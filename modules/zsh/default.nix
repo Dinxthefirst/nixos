@@ -80,7 +80,7 @@ in {
             zen "$1" &
           }
           np() {
-            NIXPKGS_ALLOW_UNFREE=1 nix-shell -p "$1" --extra-experimental-features flakes
+            NIXPKGS_ALLOW_UNFREE=1 nix-shell -p "$1" --extra-experimental-features flakes --command zsh
           }
           nd() {
             nix develop $1 --command zsh
