@@ -20,6 +20,7 @@ in {
         style = ./style.css;
         settings.main = {
           layer = "top";
+          output = ["DP-1" "eDP-1"];
           position = "top";
           spacing = 0;
           height = 42;
