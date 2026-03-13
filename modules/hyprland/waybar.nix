@@ -51,7 +51,7 @@ in {
             format = "󰂲";
             "format-on" = "{icon}";
             "format-off" = "{icon}";
-            "format-connected" = "{icon} {battery}";
+            "format-connected" = "{icon}";
             "format-icons" = {
               on = "󰂯";
               off = "󰂲";
@@ -70,7 +70,7 @@ in {
               ];
             };
             "on-click" = "blueman-manager";
-            "tooltip-format-connected" = "{device_enumerate}\n{battery}";
+            "tooltip-format-connected" = "{device_enumerate}";
           };
 
           clock = {
