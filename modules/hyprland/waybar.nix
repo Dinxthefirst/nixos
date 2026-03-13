@@ -59,8 +59,6 @@ in {
             };
             "on-click" = "blueman-manager";
             "tooltip-format-connected" = "{device_enumerate}";
-            "tooltip-format-connected-battery" = "{device_enumerate}\n{device_battery_percentage}%";
-            "tooltip-format-enumerate-connected-battery" = "{device_name}: {device_battery_percentage}%";
           };
 
           clock = {
