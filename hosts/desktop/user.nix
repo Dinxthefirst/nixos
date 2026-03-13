@@ -32,6 +32,7 @@
       nvtop.enable = true;
       typst.enable = true;
       ghostty.enable = true;
+      bluetooth.enable = true;
     };
   };
 }
