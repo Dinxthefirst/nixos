@@ -48,7 +48,7 @@ in {
           };
 
           bluetooth = {
-            format = "󰂲 {status}";
+            format = "󰂲";
             "format-on" = "{icon}";
             "format-off" = "{icon}";
             "format-connected" = "{icon}  {device_battery_percentage}%";
