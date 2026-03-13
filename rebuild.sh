@@ -4,26 +4,31 @@ set -euo pipefail
 CONFIG_DIR="$HOME/.config/nixos"
 NIXOS_LOG_FILE="$CONFIG_DIR/rebuild.log"
 
+Help()
+{
+    echo "NixOS rebuild script."
+    echo
+    echo "Syntax: $0 <target> [-h] [-u] [-v] [-b] [--no-push]"
+    echo "options:"
+    echo "-h            Help: show the help options of the rebuild script."
+    echo "-u            Update flakes: updates the flakes in nix configuration."
+    echo "-v            Verbose output: show build logs in the terminal."
+    echo "-b            Boot: Use 'nixos-rebuild boot' instead of 'nixos-rebuild switch'."
+    echo "--no-push     No Push: Do not push changes to the repository."
+}
+
+if [ $# -eq 0 ]; then
+    Help
+    exit 1
+fi
+
 TARGET="$1"
 UPDATE_FLAKES=false
 VERBOSE=false
 PUSH=true
 BOOT=false
 
-Help()
-{
-    echo "NixOS rebuild script."
-    echo
-    echo "Syntax: $0 <target> [-u] [-v] [-b] [--no-push]"
-    echo "options:"
-    echo "u             Update flakes: updates the flakes in nix configuration."
-    echo "v             Verbose output: show build logs in the terminal."
-    echo "-b            Boot: Use 'nixos-rebuild boot' instead of 'nixos-rebuild switch'."
-    echo "--no-push     No Push: Do not push changes to the repository."
-    echo
-}
-
-TEMP=$(getopt -o uvb --long no-push -n "$0" -- "$@")
+TEMP=$(getopt -o uvbh --long no-push -n "$0" -- "$@")
 if [ $? != 0 ]; then
     echo "Error in arguments" >&2
     Help
@@ -33,6 +38,10 @@ eval set -- "$TEMP"
 
 while true; do
   case "$1" in
+    -h)
+      Help
+      exit 1
+      ;;
     -u)
       UPDATE_FLAKES=true
       shift
