@@ -51,14 +51,14 @@ in {
             format = "󰂲";
             "format-on" = "{icon}";
             "format-off" = "{icon}";
-            "format-connected" = "{icon}";
+            "format-connected" = "{icon} {battery}";
             "format-icons" = {
               on = "󰂯";
               off = "󰂲";
               connected = "󰂱";
             };
             "on-click" = "blueman-manager";
-            "tooltip-format-connected" = "{device_enumerate}";
+            "tooltip-format-connected" = "{device_enumerate}\n{battery}";
           };
 
           clock = {
@@ -69,7 +69,7 @@ in {
             calendar = {
               mode = "year";
               mode-mon-col = 3;
-              weeks-pos = "right";
+              weeks-pos = "left";
               on-scroll = 1;
               on-click-right = "mode";
               format = {
