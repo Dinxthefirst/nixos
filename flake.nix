@@ -14,7 +14,7 @@
     mkConfig = hostname:
       nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs hostname;
+          inherit inputs hostname user;
         };
         modules = [
           ./modules/system/configuration.nix
