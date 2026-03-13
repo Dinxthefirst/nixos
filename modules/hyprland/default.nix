@@ -44,6 +44,7 @@ in {
       kdePackages.dolphin
       rofi
       hyprshot
+      playerctl
     ];
 
     home-manager.users.${user} = {
