@@ -56,6 +56,18 @@ in {
               on = "󰂯";
               off = "󰂲";
               connected = "󰂱";
+              battery = [
+                "󰁺"
+                "󰁻"
+                "󰁼"
+                "󰁽"
+                "󰁾"
+                "󰁿"
+                "󰂀"
+                "󰂁"
+                "󰂂"
+                "󰁹"
+              ];
             };
             "on-click" = "blueman-manager";
             "tooltip-format-connected" = "{device_enumerate}\n{battery}";
