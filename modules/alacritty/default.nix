@@ -2,17 +2,19 @@
   pkgs,
   lib,
   config,
+  specialArgs,
   ...
 }:
 with lib; let
   cfg = config.modules.alacritty;
+  user = specialArgs.user;
 in {
   options = {
     modules.alacritty.enable = mkEnableOption "alacritty";
   };
 
   config = mkIf cfg.enable {
-    home-manager.users.toft = {
+    home-manager.users.${user} = {
       programs.alacritty = {
         enable = true;
         settings = {

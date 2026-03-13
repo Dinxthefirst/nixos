@@ -2,17 +2,19 @@
   pkgs,
   lib,
   config,
+  specialArgs,
   ...
 }:
 with lib; let
   cfg = config.modules.waybar;
+  user = specialArgs.user;
 in {
   options = {
     modules.waybar.enable = mkEnableOption "waybar";
   };
 
   config = mkIf cfg.enable {
-    home-manager.users.toft = {
+    home-manager.users.${user} = {
       programs.waybar = {
         enable = true;
         style = ./style.css;

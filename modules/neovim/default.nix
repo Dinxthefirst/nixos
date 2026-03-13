@@ -2,10 +2,12 @@
   pkgs,
   lib,
   config,
+  specialArgs,
   ...
 }:
 with lib; let
   cfg = config.modules.neovim;
+  user = specialArgs.user;
 in {
   options = {
     modules.neovim.enable = mkEnableOption "neovim";
@@ -13,7 +15,7 @@ in {
 
   config = mkIf cfg.enable {
     environment.variables.EDITOR = "nvim";
-    home-manager.users.toft = {
+    home-manager.users.${user} = {
       programs.neovim = {
         enable = true;
         viAlias = true;

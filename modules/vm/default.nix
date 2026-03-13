@@ -2,10 +2,12 @@
   pkgs,
   lib,
   config,
+  specialArgs,
   ...
 }:
 with lib; let
   cfg = config.modules.vm;
+  user = specialArgs.user;
 in {
   options = {
     modules.vm.enable = mkEnableOption "vm";
@@ -13,6 +15,6 @@ in {
 
   config = mkIf cfg.enable {
     virtualisation.virtualbox.host.enable = true;
-    users.extraGroups.vboxusers.members = ["toft"];
+    users.extraGroups.vboxusers.members = ["${user}"];
   };
 }

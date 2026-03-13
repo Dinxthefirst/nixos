@@ -2,10 +2,12 @@
   lib,
   config,
   pkgs,
+  specialArgs,
   ...
 }:
 with lib; let
   cfg = config.modules.git;
+  user = specialArgs.user;
 in {
   options = {
     modules.git.enable = mkEnableOption "git";
@@ -15,7 +17,7 @@ in {
     environment.systemPackages = with pkgs; [
       diff-so-fancy
     ];
-    home-manager.users.toft = {
+    home-manager.users.${user} = {
       programs.git = {
         enable = true;
         settings = {

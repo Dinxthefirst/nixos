@@ -2,10 +2,12 @@
   pkgs,
   lib,
   config,
+  specialArgs,
   ...
 }:
 with lib; let
   cfg = config.modules.gnome;
+  user = specialArgs.user;
 in {
   options = {
     modules.gnome.enable = mkEnableOption "gnome";
@@ -68,7 +70,7 @@ in {
     #   wantedBy = ["default.target"];
     # };
 
-    home-manager.users.toft = {
+    home-manager.users.${user} = {
       dconf.settings = {
         "org/gnome/desktop/wm/keybindings" = {
           switch-to-workspace-1 = ["<Super>1"];
