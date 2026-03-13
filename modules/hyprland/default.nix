@@ -44,9 +44,6 @@ in {
       kdePackages.dolphin
       rofi
       hyprshot
-      gsettings-desktop-schemas
-      libsForQt5.qt5ct
-      kdePackages.qt6ct
     ];
 
     home-manager.users.${user} = {
@@ -55,7 +52,6 @@ in {
       home.file.".config/hypr/bindings.conf".source = ./hypr/bindings.conf;
       home.file.".config/hypr/input.conf".source = ./hypr/${hostname}/input.conf;
       home.file.".config/hypr/look.conf".source = ./hypr/look.conf;
-      home.file.".config/hypr/toggle-darkmode.sh".source = ./hypr/toggle-darkmode.sh;
     };
   };
 }
