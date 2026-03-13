@@ -5,16 +5,18 @@
   ...
 }:
 with lib; let
-  discord = config.modules.discord;
-  flatpak = config.modules.flatpak;
+  cfg = config.modules.discord;
 in {
   options = {
     modules.discord.enable = mkEnableOption "discord";
   };
 
-  config = mkIf (discord.enable && flatpak.enable) {
-    services.flatpak.packages = [
-      "com.discordapp.Discord"
+  config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      discord
     ];
+    # services.flatpak.packages = [
+    #   "com.discordapp.Discord"
+    # ];
   };
 }
