@@ -33,6 +33,7 @@
       typst.enable = true;
       ghostty.enable = true;
       bluetooth.enable = true;
+      network.enable = true;
     };
   };
 }
