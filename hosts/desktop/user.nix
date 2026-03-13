@@ -6,11 +6,12 @@
   config = {
     modules = {
       zen.enable = true;
-      flatpak.enable = true;
-      gnome.enable = true;
+      flatpak.enable = false;
+      gnome.enable = false;
+      hyprland.enable = true;
       discord.enable = true;
       steam.enable = true;
-      stremio.enable = false;
+      stremio.enable = true;
       gaming.enable = true;
       latex.enable = false;
       nodejs.enable = false;
@@ -18,7 +19,7 @@
       zsh.enable = true;
       vscode.enable = true;
       direnv.enable = true;
-      obsidian.enable = true;
+      obsidian.enable = false;
       minecraft.enable = true;
       gparted.enable = true;
       vm.enable = false;
