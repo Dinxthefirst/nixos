@@ -1,10 +1,11 @@
 {
   pkgs,
   config,
+  specialArgs,
   ...
 }: let
   # Change this to your username.
-  user = "toft";
+  user = specialArgs.user;
   # Change this to match your system's CPU.
   platform = "amd";
   # Change this to specify the IOMMU ids you wrote down earlier.

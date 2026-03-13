@@ -2,10 +2,12 @@
   pkgs,
   lib,
   config,
+  specialArgs,
   ...
 }:
 with lib; let
   cfg = config.modules.docker;
+  user = specialArgs.user;
 in {
   options = {
     modules.docker.enable = mkEnableOption "docker";
@@ -15,6 +17,6 @@ in {
     virtualisation.docker = {
       enable = true;
     };
-    users.users.toft.extraGroups = ["docker"];
+    users.users.${user}.extraGroups = ["docker"];
   };
 }

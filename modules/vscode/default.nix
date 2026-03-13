@@ -2,10 +2,12 @@
   pkgs,
   lib,
   config,
+  specialArgs,
   ...
 }:
 with lib; let
   cfg = config.modules.vscode;
+  user = specialArgs.user;
 in {
   options = {
     modules.vscode.enable = mkEnableOption "vscode";
@@ -13,7 +15,7 @@ in {
 
   config = mkIf cfg.enable {
     nixpkgs.config.allowUnfree = true;
-    home-manager.users.toft = {
+    home-manager.users.${user} = {
       nixpkgs.config.allowUnfree = true;
       programs.vscode = {
         enable = true;

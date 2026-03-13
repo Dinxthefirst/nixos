@@ -3,10 +3,11 @@
   lib,
   config,
   user,
+  specialArgs,
   ...
 }:
 with lib; let
-  user = "toft";
+  user = specialArgs.user;
   cfg = config.modules.zsh;
 in {
   options = {
