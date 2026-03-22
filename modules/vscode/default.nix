@@ -24,7 +24,6 @@ in {
             kamadorueda.alejandra
             bbenoist.nix
             ms-vsliveshare.vsliveshare
-            james-yu.latex-workshop
             esbenp.prettier-vscode
             ocamllabs.ocaml-platform
             dracula-theme.theme-dracula
@@ -70,10 +69,7 @@ in {
             "[coq]" = {
               "editor.tabSize" = 2;
             };
-            "latex-workshop.latex.outDir" = "/tmp/latex-build";
             "editor.formatOnSave" = true;
-            "files.autoSave" = "onFocusChange";
-            "latex-workshop.formatting.latex" = "latexindent";
             "editor.fontFamily" = "'Fira Code'";
             "editor.fontLigatures" = true;
             "editor.minimap.enabled" = false;
@@ -86,15 +82,7 @@ in {
               "**/.bloop" = true;
               "**/.metals" = true;
             };
-            "github.copilot.enable" = {
-              "*" = false;
-            };
             "zig.zls.enabled" = "on";
-            "[tlaplus]" = {
-              "editor.codeActionsOnSave" = {
-                "source" = true;
-              };
-            };
           };
         };
       };
