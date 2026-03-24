@@ -30,6 +30,7 @@
       vm.enable = true;
       alacritty.enable = false;
       ghostty.enable = true;
+      typst.enable = true;
     };
   };
 }
