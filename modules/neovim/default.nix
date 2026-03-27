@@ -26,8 +26,11 @@ in {
           vimPlugins.nvim-treesitter
           vimPlugins.undotree
         ];
+        extraConfig = ''
+          require("dinx")
+        '';
       };
-      home.file.".config/nvim/init.lua".source = ./init.lua;
+      # home.file.".config/nvim/init.lua".source = ./init.lua;
       home.file.".config/nvim/lua/dinx/init.lua".source = ./lua/dinx/init.lua;
       home.file.".config/nvim/lua/dinx/options.lua".source = ./lua/dinx/options.lua;
       home.file.".config/nvim/lua/dinx/remaps.lua".source = ./lua/dinx/remaps.lua;
