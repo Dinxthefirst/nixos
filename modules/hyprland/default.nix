@@ -45,7 +45,7 @@ in {
       rofi
       hyprshot
       playerctl
-      nwg-look
+      glib
     ];
 
     home-manager.users.${user} = {
