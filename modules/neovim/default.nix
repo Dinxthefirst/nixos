@@ -27,7 +27,7 @@ in {
           vimPlugins.undotree
         ];
         extraConfig = ''
-          require("dinx")
+          require('dinx')
         '';
       };
       # home.file.".config/nvim/init.lua".source = ./init.lua;
