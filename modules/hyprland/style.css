@@ -125,6 +125,7 @@
 }
 
 /* --- Right Modules (Single, Seamless Bar ) --- */
+#theme-toggle,
 #bluetooth,
 #pulseaudio,
 #backlight,
@@ -141,6 +142,7 @@
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+#theme-toggle:hover,
 #bluetooth:hover,
 #pulseaudio:hover,
 #backlight:hover,
