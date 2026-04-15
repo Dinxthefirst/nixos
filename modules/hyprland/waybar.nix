@@ -32,7 +32,7 @@ in {
             "clock"
           ];
           modules-right = [
-            "theme-toggle"
+            "custom/theme-toggle"
             "bluetooth"
             "network"
             "pulseaudio"
@@ -48,7 +48,7 @@ in {
             };
           };
 
-          "theme-toggle" = {
+          "custom/theme-toggle" = {
             format = "{}";
             "on-click" = "sh -c '
                             if [ \"$(gsettings get org.gnome.desktop.interface color-scheme)\" = \"'prefer-dark'\" ]; then
