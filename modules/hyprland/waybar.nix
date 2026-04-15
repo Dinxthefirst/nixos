@@ -64,14 +64,15 @@ in {
               "light" = "☀️";
               "dark" = "🌙";
             };
-            exec = ''
-              sh -c '
-                if [ \"$(gsettings get org.gnome.desktop.interface color-scheme)\" = \"prefer-dark\" ]; then
-                    echo '{\"text\": \"🌙\", \"alt\": \"dark\", \"tooltip\": \"Switch to Light Theme\"}';
-                else echo '{\"text\": \"☀️\", \"alt\": \"light\", \"tooltip\": \"Switch to Dark Theme\"}';
-                fi
-                '
-            '';
+            # exec = ''
+            #   sh -c '
+            #     if [ \"$(gsettings get org.gnome.desktop.interface color-scheme)\" = \"prefer-dark\" ]; then
+            #         echo '{\"text\": \"🌙\", \"alt\": \"dark\", \"tooltip\": \"Switch to Light Theme\"}';
+            #     else
+            #         echo '{\"text\": \"☀️\", \"alt\": \"light\", \"tooltip\": \"Switch to Dark Theme\"}';
+            #     fi
+            #     '
+            # '';
             interval = 10;
           };
 
