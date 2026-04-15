@@ -6,7 +6,7 @@
   config = {
     modules = {
       zen.enable = true;
-      flatpak.enable = false;
+      flatpak.enable = true;
       gnome.enable = false;
       hyprland.enable = true;
       discord.enable = true;
