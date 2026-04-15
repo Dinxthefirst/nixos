@@ -18,3 +18,4 @@ Do not use the hardware configurations from this repository as they are likely n
 - fix neovim config
 - auto add new modules
 - make available for all systems, not just x86_64
+- make browser global preferences
