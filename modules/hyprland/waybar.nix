@@ -32,7 +32,6 @@ in {
             "clock"
           ];
           modules-right = [
-            "custom/theme-toggle"
             "bluetooth"
             "network"
             "pulseaudio"
@@ -46,34 +45,6 @@ in {
               active = "";
               default = "";
             };
-          };
-
-          "custom/theme-toggle" = {
-            format = "{}";
-            on-click = ''
-              sh -c '
-                if [ \"$(gsettings get org.gnome.desktop.interface color-scheme)\" = \"'prefer-dark'\" ]; then
-                    gsettings set org.gnome.desktop.interface color-scheme prefer-light
-                else
-                    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-                fi'
-            '';
-            tooltip = false;
-            return-type = "json";
-            format-icons = {
-              "light" = "☀️";
-              "dark" = "🌙";
-            };
-            # exec = ''
-            #   sh -c '
-            #     if [ \"$(gsettings get org.gnome.desktop.interface color-scheme)\" = \"prefer-dark\" ]; then
-            #         echo '{\"text\": \"🌙\", \"alt\": \"dark\", \"tooltip\": \"Switch to Light Theme\"}';
-            #     else
-            #         echo '{\"text\": \"☀️\", \"alt\": \"light\", \"tooltip\": \"Switch to Dark Theme\"}';
-            #     fi
-            #     '
-            # '';
-            interval = 10;
           };
 
           bluetooth = {
