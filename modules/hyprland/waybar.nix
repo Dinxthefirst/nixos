@@ -50,7 +50,7 @@ in {
 
           "custom/theme-toggle" = {
             format = "{}";
-            "on-click" = ''
+            on-click = ''
               sh -c '
                 if [ \"$(gsettings get org.gnome.desktop.interface color-scheme)\" = \"'prefer-dark'\" ]; then
                     gsettings set org.gnome.desktop.interface color-scheme prefer-light
@@ -58,12 +58,13 @@ in {
                     gsettings set org.gnome.desktop.interface color-scheme prefer-dark
                 fi'
             '';
-            "tooltip" = false;
-            "format-icons" = {
+            tooltip = false;
+            return-type = "json";
+            format-icons = {
               "light" = "☀️";
               "dark" = "🌙";
             };
-            "exec" = ''
+            exec = ''
               sh -c '
                 if [ \"$(gsettings get org.gnome.desktop.interface color-scheme)\" = \"prefer-dark\" ]; then
                     echo '{\"text\": \"🌙\", \"alt\": \"dark\", \"tooltip\": \"Switch to Light Theme\"}';
@@ -71,7 +72,7 @@ in {
                 fi
                 '
             '';
-            "interval" = 10;
+            interval = 10;
           };
 
           bluetooth = {
