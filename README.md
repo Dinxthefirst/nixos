@@ -19,3 +19,4 @@ Do not use the hardware configurations from this repository as they are likely n
 - auto add new modules
 - make available for all systems, not just x86_64
 - make browser global preferences
+- in rebuild script, make sure to not pop stash if no changes were stashed
