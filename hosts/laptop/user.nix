@@ -3,10 +3,6 @@
   config,
   ...
 }: {
-  imports = [
-    ../../modules
-  ];
-
   config = {
     environment.systemPackages = with pkgs; [
       brightnessctl
