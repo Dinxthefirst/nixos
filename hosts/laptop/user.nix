@@ -27,7 +27,6 @@
       neovim.enable = true;
       tmux.enable = true;
       bluetooth.enable = true;
-      vm.enable = true;
       alacritty.enable = false;
       ghostty.enable = true;
       typst.enable = true;

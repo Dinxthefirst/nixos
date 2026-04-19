@@ -17,7 +17,7 @@
           inherit inputs hostname user;
         };
         modules = [
-          ./modules/system/configuration.nix
+          (inputs.import-tree ./modules)
           ./hosts/${hostname}/hardware-configuration.nix
           ./hosts/${hostname}/user.nix
           home-manager.nixosModules.home-manager
@@ -64,6 +64,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    import-tree.url = "github:vic/import-tree";
   };
 
   nixConfig = {

@@ -1,8 +1,4 @@
 {config, ...}: {
-  imports = [
-    ../../modules
-  ];
-
   config = {
     modules = {
       zen.enable = true;
@@ -22,7 +18,6 @@
       obsidian.enable = false;
       minecraft.enable = true;
       gparted.enable = true;
-      vm.enable = false;
       godot.enable = false;
       unity.enable = false;
       docker.enable = false;
