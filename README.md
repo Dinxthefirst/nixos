@@ -29,7 +29,6 @@ Do not use the hardware configurations from this repository as they are likely n
 
 - comma (for testing packages)
 - nix-index (for finding packages that own file)
-- zoxide (for fuzzy search in terminal)
 - nurl, nix-init (for flake generation)
 - statix (linter for nix)
 - nix-direnv (improved direnv)

@@ -13,8 +13,6 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      heroic
-      lutris
       wine
       winetricks
       glibc

@@ -85,6 +85,7 @@ in {
           nd() {
             nix develop $1 --command zsh
           }
+          eval "$(zoxide init zsh)"
         '';
 
         history = {

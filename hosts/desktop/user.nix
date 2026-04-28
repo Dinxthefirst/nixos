@@ -9,6 +9,8 @@
       steam.enable = true;
       stremio.enable = true;
       gaming.enable = true;
+      lutris.enable = false;
+      heroic.enable = false;
       latex.enable = false;
       nodejs.enable = false;
       git.enable = true;
@@ -16,7 +18,7 @@
       vscode.enable = true;
       direnv.enable = true;
       obsidian.enable = false;
-      minecraft.enable = true;
+      minecraft.enable = false;
       gparted.enable = true;
       godot.enable = false;
       unity.enable = false;
@@ -29,6 +31,7 @@
       ghostty.enable = true;
       bluetooth.enable = true;
       network.enable = true;
+      zoxide.enable = true;
     };
   };
 }
