@@ -83,6 +83,9 @@ in {
               "**/.metals" = true;
             };
             "zig.zls.enabled" = "on";
+            "window.autodetectColorScheme" = true;
+            "workbench.preferredDarkColorTheme" = "Dracula Theme";
+            "workbench.preferredLightColorTheme" = "Solarized Light";
           };
         };
       };
