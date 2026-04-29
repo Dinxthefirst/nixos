@@ -51,6 +51,8 @@ in {
           gi = "git init";
           gcl = "git clone";
           gco = "git checkout";
+          light = "gsettings set org.gnome.desktop.interface color-scheme prefer-light";
+          dark = "gsettings set org.gnome.desktop.interface color-scheme prefer-dark";
         };
 
         initContent = ''
