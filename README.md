@@ -1,3 +1,4 @@
+# NixOS configuration
 To rebuild the system use
 
 ```bash
