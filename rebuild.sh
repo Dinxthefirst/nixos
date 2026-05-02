@@ -93,10 +93,10 @@ else
 fi
 
 if $VERBOSE; then
-    sudo $REBUILD --upgrade --flake "$CONFIG_DIR#$TARGET" --accept-flake-config --option cores 4 2>&1 | tee "$NIXOS_LOG_FILE"
+    sudo $REBUILD --flake "$CONFIG_DIR#$TARGET" --accept-flake-config 2>&1 | tee "$NIXOS_LOG_FILE"
     REBUILD_EXIT_STATUS=${PIPESTATUS[0]}
 else
-    sudo $REBUILD --upgrade --flake "$CONFIG_DIR#$TARGET" --accept-flake-config --option cores 4 &> "$NIXOS_LOG_FILE"
+    sudo $REBUILD --flake "$CONFIG_DIR#$TARGET" --accept-flake-config &> "$NIXOS_LOG_FILE"
     REBUILD_EXIT_STATUS=$?
 fi
 
