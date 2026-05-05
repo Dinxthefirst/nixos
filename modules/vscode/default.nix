@@ -14,9 +14,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    nixpkgs.config.allowUnfree = true;
     home-manager.users.${user} = {
-      nixpkgs.config.allowUnfree = true;
       programs.vscode = {
         enable = true;
         profiles.default = {

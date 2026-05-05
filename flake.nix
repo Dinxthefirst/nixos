@@ -25,6 +25,8 @@
             system.stateVersion = "26.05";
             networking.hostName = "nixos";
             home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
               extraSpecialArgs = {inherit inputs;};
               users.${user}.home = {
                 username = "${user}";
@@ -58,7 +60,10 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     creamlinux = {
       url = "github:Novattz/creamlinux-installer/17ad517a459f1a41a40bef2642ee952859147ab5";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -68,7 +73,7 @@
   };
 
   nixConfig = {
-    experimental-features = ["nix-command" "flakes"];
-    trusted-users = ["root" "toft"];
+    extra-substituters = ["https://hyprland.cachix.org"];
+    extra-trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 }
