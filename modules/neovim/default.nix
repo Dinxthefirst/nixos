@@ -47,7 +47,7 @@ in {
           luasnip
           cmp_luasnip
         ];
-        extraConfig = ''
+        extraLuaConfig = ''
           require('dinx')
         '';
       };
