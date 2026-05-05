@@ -1,4 +1,3 @@
-local lsp = require('lspconfig')
 local caps = require('cmp_nvim_lsp').default_capabilities()
 
 local on_attach = function(_, buf)
@@ -14,7 +13,16 @@ local on_attach = function(_, buf)
 end
 
 -- Add each LSP from extraPackages
-local servers = { 'lua_ls', 'nil_ls' }
-for _, server in ipairs(servers) do
-  lsp[server].setup { capabilities = caps, on_attach = on_attach }
+local servers = {
+  lua_ls = { cmd = { 'lua-language-server' }, filetypes = { 'lua' }, root_markers = { '.luarc.json', '.git' } },
+  nil_ls = { cmd = { 'nil' }, filetypes = { 'nix' }, root_markers = { 'flake.nix', '.git' } },
+  -- ts_ls = { cmd = { 'typescript-language-server', '--stdio' }, filetypes = { 'typescript', 'javascript' }, root_markers = { 'tsconfig.json', '.git' } },
+  rust_ls = { cmd = { 'rust-analyzer' }, filetypes = { 'rust' }, root_markers = { 'cargo.toml', '.git' } },
+}
+
+for name, cfg in pairs(servers) do
+  vim.lsp.config(name, vim.tbl_extend('force', cfg, {
+    capabilities = caps,
+    on_attach    = on_attach,
+  }))
 end

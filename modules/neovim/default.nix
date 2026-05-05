@@ -35,7 +35,6 @@ in {
           plenary-nvim
           nvim-treesitter.withAllGrammars
           undotree
-          nvim-lspconfig
           nvim-cmp
           cmp-nvim-lsp
           luasnip
