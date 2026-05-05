@@ -1,4 +1,2 @@
-require('nvim-treesitter.configs').setup({
-  highlight    = { enable = true },
-  indent       = { enable = true },
-})
+vim.treesitter.language.add('lua')
+vim.treesitter.language.add('nix')
