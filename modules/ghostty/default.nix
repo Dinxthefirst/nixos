@@ -22,7 +22,7 @@ in {
 
         settings = {
           theme = "Abernathy";
-          background-opacity = "0.75";
+          background-opacity = "0.5";
           font-family = "FiraCode Nerd Font Mono";
           font-size = "16";
         };
