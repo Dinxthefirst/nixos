@@ -6,7 +6,7 @@ To rebuild the system use
 $ rebuild.sh
 ```
 
-Use `-h` for help with the options of running the rebuild scritpy.
+Use `-h` for help with the options of running the rebuild script.
 
 The design is modular: This means that you can create a new host in the directory "hosts", and then use the rebuild script `rebuild.sh`, with the host name as the target of the rebuild, to create a new machine. The modules can easily be enabled or disabled:
 
@@ -15,7 +15,7 @@ The design is modular: This means that you can create a new host in the director
 ghostty.enable = true;
 ```
 
-This enables the ghostty terminal.
+This enables the module for the ghostty terminal.
 
 Do not use the hardware configurations from this repository as they are likely not compatible with other systems. To generate a new hardware configuration use `nixos-generate-config`
 
