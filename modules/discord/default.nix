@@ -13,8 +13,7 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      discord
-      vencord
+      # discord
       vesktop
     ];
     # services.flatpak.packages = [

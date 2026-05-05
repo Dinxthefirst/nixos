@@ -26,9 +26,21 @@ in {
       package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     };
 
-    modules = {
-      waybar.enable = true;
+    xdg.portal = {
+      config.common.default = "*";
     };
+
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
+
+    security.rtkit.enable = true;
+
+    modules.waybar.enable = true;
 
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
