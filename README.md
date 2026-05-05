@@ -1,4 +1,5 @@
 # NixOS configuration
+
 To rebuild the system use
 
 ```bash
@@ -24,8 +25,6 @@ Do not use the hardware configurations from this repository as they are likely n
 - fix neovim config
 - make available for all systems, not just x86_64
 - make browser global preferences
-- make rebuild script more idiomatic to other bash scripts (e.g. usage)
-- in rebuild script, make sure to not pop stash if no changes were stashed
 
 ### Modules to add
 
