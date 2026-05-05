@@ -9,16 +9,77 @@
 with lib; let
   cfg = config.modules.zen;
   user = specialArgs.user;
-in {
-  options = {
-    modules.zen.enable = mkEnableOption "zen";
+
+  extension = shortId: guid: {
+    name = guid;
+    value = {
+      install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
+      installation_mode = "normal_installed";
+    };
   };
+
+  prefs = {
+    "extensions.autoDisableScopes" = 0;
+    "extensions.pocket.enabled" = false;
+  };
+
+  extensions = [
+    (extension "ublock-origin" "uBlock0@raymondhill.net")
+    (extension "consten-o-matic" "gdpr@cavi.au.dk")
+    (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
+  ];
+
+  zen =
+    pkgs.wrapFirefox
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped
+    {
+      extraPrefs = lib.concatLines (
+        lib.mapAttrsToList (
+          name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
+        )
+        prefs
+      );
+      extraPolicies = {
+        DisableTelemetry = true;
+        ExtensionSettings = builtins.listToAttrs extensions;
+
+        SearchEngines = {
+          Default = "qwant";
+          Add = [
+            {
+              Name = "nixpkgs packages";
+              URLTemplate = "https://search.nixos.org/packages?query={searchTerms}";
+              IconURL = "https://wiki.nixos.org/favicon.ico";
+              Alias = "@np";
+            }
+            {
+              Name = "NixOS options";
+              URLTemplate = "https://search.nixos.org/options?query={searchTerms}";
+              IconURL = "https://wiki.nixos.org/favicon.ico";
+              Alias = "@no";
+            }
+            {
+              Name = "NixOS Wiki";
+              URLTemplate = "https://wiki.nixos.org/w/index.php?search={searchTerms}";
+              IconURL = "https://wiki.nixos.org/favicon.ico";
+              Alias = "@nw";
+            }
+            {
+              Name = "noogle";
+              URLTemplate = "https://noogle.dev/q?term={searchTerms}";
+              IconURL = "https://noogle.dev/favicon.ico";
+              Alias = "@ng";
+            }
+          ];
+        };
+      };
+    };
+in {
+  options.modules.zen.enable = mkEnableOption "zen";
 
   config = mkIf cfg.enable {
     home-manager.users.${user} = {
-      home.packages = [
-        inputs.zen-browser.packages."x86_64-linux".default
-      ];
+      home.packages = [zen];
     };
   };
 }

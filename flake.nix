@@ -9,12 +9,13 @@
   }: let
     user = "toft";
     system = "x86_64-linux";
+    stateVersion = "25.05";
     pkgs = nixpkgs.legacyPackages.${system};
 
     mkConfig = hostname:
       nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs hostname user;
+          inherit inputs hostname user system;
         };
         modules = [
           (inputs.import-tree ./modules)
@@ -22,16 +23,17 @@
           ./hosts/${hostname}/user.nix
           home-manager.nixosModules.home-manager
           {
-            system.stateVersion = "26.05";
+            system.stateVersion = stateVersion;
             networking.hostName = "nixos";
+
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = {inherit inputs;};
               users.${user}.home = {
-                username = "${user}";
+                inherit stateVersion;
+                username = user;
                 homeDirectory = "/home/${user}";
-                stateVersion = "26.05";
               };
               backupFileExtension = "backup";
             };
@@ -57,7 +59,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
+      url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
