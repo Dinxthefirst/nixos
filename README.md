@@ -22,7 +22,6 @@ Do not use the hardware configurations from this repository as they are likely n
 ## Further work
 
 - dendritic pattern (big task)
-- fix neovim config
 
 ### Modules to add
 
