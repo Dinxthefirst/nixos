@@ -33,13 +33,7 @@ in {
           rose-pine
           telescope-nvim
           plenary-nvim
-          (nvim-treesitter.withPlugins (p:
-            with p; [
-              lua
-              nix
-              rust
-              # add languages here
-            ]))
+          nvim-treesitter.withAllGrammars
           undotree
           nvim-lspconfig
           nvim-cmp
