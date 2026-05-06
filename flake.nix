@@ -9,7 +9,7 @@
   }: let
     user = "toft";
     system = "x86_64-linux";
-    stateVersion = "25.05";
+    stateVersion = "26.05";
     pkgs = nixpkgs.legacyPackages.${system};
 
     mkConfig = hostname:
