@@ -22,7 +22,7 @@
       vscode.enable = true;
       direnv.enable = true;
       obsidian.enable = false;
-      minecraft.enable = false;
+      minecraft.enable = true;
       gparted.enable = true;
       godot.enable = false;
       unity.enable = false;
