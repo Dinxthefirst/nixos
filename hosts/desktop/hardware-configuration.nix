@@ -18,7 +18,7 @@
     kernelModules = ["kvm-amd"];
     extraModulePackages = [];
     loader.systemd-boot.enable = true;
-    loader.systemd-boot.configurationLimit = 10;
+    loader.systemd-boot.configurationLimit = 200;
     loader.efi.canTouchEfiVariables = true;
   };
 
