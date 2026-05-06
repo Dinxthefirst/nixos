@@ -52,7 +52,8 @@ in {
     ];
 
     home-manager.users.${user} = {
-      home.file.".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
+      home.file.".config/hypr/hyprland.conf".source = ./hypr/minimal.conf;
+      # home.file.".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
       # home.file.".config/hypr/monitors.conf".source = ./hypr/${hostname}/monitors.conf;
       # home.file.".config/hypr/bindings.conf".source = ./hypr/bindings.conf;
       # home.file.".config/hypr/input.conf".source = ./hypr/${hostname}/input.conf;
