@@ -9,9 +9,7 @@ with lib; let
   cfg = config.modules.ghostty;
   user = specialArgs.user;
 in {
-  options = {
-    modules.ghostty.enable = mkEnableOption "ghostty";
-  };
+  options.modules.ghostty.enable = mkEnableOption "ghostty";
 
   config = mkIf cfg.enable {
     home-manager.users.${user} = {
