@@ -27,9 +27,7 @@ in {
       portalPackage = inputs.hyprland.packages."${pkgs.system}".xdg-desktop-portal-hyprland;
     };
 
-    xdg.portal = {
-      config.common.default = "*";
-    };
+    xdg.portal.config.common.default = ["hyprland" "gtk"];
 
     modules.waybar.enable = true;
 
