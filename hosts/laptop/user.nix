@@ -26,6 +26,7 @@
       alacritty.enable = false;
       ghostty.enable = true;
       typst.enable = true;
+      zoxide.enable = true;
     };
   };
 }
