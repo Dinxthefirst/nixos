@@ -15,16 +15,14 @@ in {
     ./waybar.nix
   ];
 
-  options = {
-    modules.hyprland.enable = mkEnableOption "hyprland";
-  };
+  options.modules.hyprland.enable = mkEnableOption "hyprland";
 
   config = mkIf cfg.enable {
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
-      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-      portalPackage = inputs.hyprland.packages."${pkgs.system}".xdg-desktop-portal-hyprland;
+      package = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".hyprland;
+      portalPackage = inputs.hyprland.packages."${pkgs.stdenv.hostPlatform.system}".xdg-desktop-portal-hyprland;
     };
 
     xdg.portal.config.common.default = ["hyprland" "gtk"];
