@@ -14,8 +14,18 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       hmcl
-      minecraft-server
     ];
-    networking.firewall.allowedTCPPorts = [25565];
+    services.minecraft-server = {
+      enable = true;
+      eula = true;
+      openFirewall = true;
+      declarative = true;
+      package = pkgs.minecraft-server;
+      serverProperties = {
+        server-ip = "";
+        server-port = 25565;
+      };
+      dataDir = "/var/lib/minecraft";
+    };
   };
 }
