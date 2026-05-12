@@ -16,7 +16,7 @@ in {
       hmcl
     ];
     services.minecraft-server = {
-      enable = false;
+      enable = true;
       eula = true;
       openFirewall = true;
       package = pkgs.minecraft-server;
