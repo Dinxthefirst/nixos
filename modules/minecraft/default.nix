@@ -2,9 +2,11 @@
   pkgs,
   lib,
   config,
+  specialArgs,
   ...
 }:
 with lib; let
+  user = specialArgs.user;
   cfg = config.modules.minecraft;
 in {
   options = {
@@ -25,7 +27,7 @@ in {
         server-ip = "";
         server-port = 25565;
       };
-      dataDir = "/var/lib/minecraft";
+      dataDir = "/home/${user}/minecraft-server";
     };
   };
 }
