@@ -55,16 +55,17 @@ if [[ "$UPDATE_FLAKES" == true ]]; then
     nix flake update --accept-flake-config
 fi
 
-REBUILD_CMD="nixos-rebuild $( $BOOT && echo boot || echo switch )"
-REBUILD_CMD+=" --flake ${CONFIG_DIR}#${TARGET} --accept-flake-config --sudo"
+REBUILD_CMD=(nixos-rebuild $( $BOOT && echo boot || echo switch ))
+REBUILD_CMD+=(--option allowed-uris "https:// http://")
+REBUILD_CMD+=(--flake "${CONFIG_DIR}#${TARGET}" --accept-flake-config --sudo)
 
 echo "NixOS Rebuilding for $TARGET..."
 
 if [[ "$VERBOSE" == true ]]; then
-    $REBUILD_CMD 2>&1 | tee "$NIXOS_LOG_FILE"
+    "${REBUILD_CMD[@]}" 2>&1 | tee "$NIXOS_LOG_FILE"
     REBUILD_EXIT_STATUS=${PIPESTATUS[0]}
 else
-    $REBUILD_CMD &> "$NIXOS_LOG_FILE"
+    "${REBUILD_CMD[@]}" &> "$NIXOS_LOG_FILE"
     REBUILD_EXIT_STATUS=$?
 fi
 

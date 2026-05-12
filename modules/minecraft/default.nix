@@ -16,5 +16,6 @@ in {
       hmcl
       minecraft-server
     ];
+    networking.firewall.allowedTCPPorts = [25565];
   };
 }
