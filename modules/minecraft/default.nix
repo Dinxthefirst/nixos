@@ -16,11 +16,12 @@ in {
       hmcl
     ];
     services.minecraft-server = {
-      enable = true;
+      enable = false;
       eula = true;
       openFirewall = true;
       package = pkgs.minecraft-server;
       serverProperties = {
+        server-ip = "";
         server-port = 25565;
       };
     };
