@@ -17,5 +17,6 @@ in {
     environment.systemPackages = with pkgs; [
       hmcl
     ];
+    networking.firewall.allowedTCPPorts = [25565];
   };
 }
