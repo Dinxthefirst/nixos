@@ -17,17 +17,5 @@ in {
     environment.systemPackages = with pkgs; [
       hmcl
     ];
-    services.minecraft-server = {
-      enable = false;
-      eula = true;
-      openFirewall = true;
-      declarative = true;
-      package = pkgs.minecraft-server;
-      serverProperties = {
-        server-ip = "";
-        server-port = 25565;
-      };
-      dataDir = "/home/${user}/minecraft-server";
-    };
   };
 }
