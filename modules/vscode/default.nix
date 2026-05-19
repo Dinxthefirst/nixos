@@ -84,6 +84,7 @@ in {
             "window.autodetectColorScheme" = true;
             "workbench.preferredDarkColorTheme" = "Dracula Theme";
             "workbench.preferredLightColorTheme" = "Solarized Light";
+            "chat.disableAIFeatures" = true;
           };
         };
       };
