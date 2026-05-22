@@ -43,8 +43,13 @@ done
 
 [[ -d "$CONFIG_DIR" ]] || die "config dir not found: $CONFIG_DIR"
 
+sudo -v || die "sudo auth failed"
+while true; do sudo -n true; sleep 60; kill -0 "$$" 2>/dev/null || exit; done &
+SUDO_KEEPALIVE_PID=$!
+
 pushd "$CONFIG_DIR" > /dev/null
-trap 'popd > /dev/null' EXIT
+
+trap 'popd > /dev/null; kill "$SUDO_KEEPALIVE_PID" 2>/dev/null' EXIT
 
 git pull --rebase --autostash
 
@@ -55,9 +60,9 @@ if [[ "$UPDATE_FLAKES" == true ]]; then
     nix flake update --accept-flake-config
 fi
 
-REBUILD_CMD=(nixos-rebuild $( $BOOT && echo boot || echo switch ))
+REBUILD_CMD=(sudo nixos-rebuild $( $BOOT && echo boot || echo switch ))
 REBUILD_CMD+=(--option allowed-uris "https:// http://")
-REBUILD_CMD+=(--flake "${CONFIG_DIR}#${TARGET}" --accept-flake-config --sudo)
+REBUILD_CMD+=(--flake "${CONFIG_DIR}#${TARGET}" --accept-flake-config)
 
 echo "NixOS Rebuilding for $TARGET..."
 
