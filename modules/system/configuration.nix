@@ -10,6 +10,8 @@
   };
   nixpkgs.config.allowUnfree = true;
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   imports = [
     ./gc.nix
     ./fonts.nix
@@ -46,7 +48,6 @@
     };
   };
 
-  # Configure console keymap
   console.keyMap = "dk-latin1";
 
   hardware.graphics = {
