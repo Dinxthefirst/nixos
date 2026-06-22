@@ -79,7 +79,7 @@ in {
             cd "$1"
           }
           web() {
-            zen-beta "$1" &
+            zen "$1" &
           }
           np() {
             NIXPKGS_ALLOW_UNFREE=1 nix-shell -p "$1" --extra-experimental-features flakes --command zsh
