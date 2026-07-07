@@ -39,7 +39,6 @@ in {
     services.hypridle.enable = true;
 
     environment.systemPackages = with pkgs; [
-      hyprpaper
       kdePackages.dolphin
       rofi
       hyprshot
@@ -48,6 +47,20 @@ in {
     ];
 
     home-manager.users.${user} = {
+      services.hyprpaper = {
+        enable = true;
+        settings = {
+          preload = [
+            "~/wallpapers/nix-wallpaper-nineish-catppuccin-macchiato-alt.svg"
+          ];
+          wallpaper = [
+            {
+              monitor = "";
+              path = "~/wallpapers/nix-wallpaper-nineish-catppuccin-macchiato-alt.svg";
+            }
+          ];
+        };
+      };
       # home.file.".config/hypr/hyprland.conf".source = ./hypr/minimal.conf;
       home.file.".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
       home.file.".config/hypr/monitors.conf".source = ./hypr/${hostname}/monitors.conf;
