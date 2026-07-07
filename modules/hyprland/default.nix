@@ -53,12 +53,12 @@ in {
         settings = {
           splash = false;
           preload = [
-            "~/wallpapers/nix-wallpaper-nineish-catppuccin-macchiato-alt.png"
+            "~/wallpapers/nix-wallpaper-nineish-catppuccin-macchiato-alt.svg"
           ];
           wallpaper = [
             {
               monitor = "";
-              path = "~/wallpapers/nix-wallpaper-nineish-catppuccin-macchiato-alt.png";
+              path = "~/wallpapers/nix-wallpaper-nineish-catppuccin-macchiato-alt.svg";
             }
           ];
         };
