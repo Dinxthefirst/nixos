@@ -51,16 +51,17 @@ in {
         enable = true;
         settings = {
           preload = [
-            "~/wallpapers/nix-wallpaper-nineish-catppuccin-macchiato-alt.svg"
+            "~/wallpapers/nix-wallpaper-nineish-catppuccin-macchiato-alt.png"
           ];
           wallpaper = [
             {
               monitor = "";
-              path = "~/wallpapers/nix-wallpaper-nineish-catppuccin-macchiato-alt.svg";
+              path = "~/wallpapers/nix-wallpaper-nineish-catppuccin-macchiato-alt.png";
             }
           ];
         };
       };
+
       # home.file.".config/hypr/hyprland.conf".source = ./hypr/minimal.conf;
       home.file.".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
       home.file.".config/hypr/monitors.conf".source = ./hypr/${hostname}/monitors.conf;
