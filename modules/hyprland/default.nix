@@ -42,6 +42,7 @@ in {
       kdePackages.dolphin
       rofi
       hyprshot
+      hyprpaper
       playerctl
       glib
     ];
@@ -50,6 +51,7 @@ in {
       services.hyprpaper = {
         enable = true;
         settings = {
+          splash = false;
           preload = [
             "~/wallpapers/nix-wallpaper-nineish-catppuccin-macchiato-alt.png"
           ];
