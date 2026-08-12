@@ -72,8 +72,8 @@ hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through workspaces
-hl.bind("SUPER + mouse_up", hl.dsp.focus("e+1"))
-hl.bind("SUPER + mouse_down", hl.dsp.focus("e-1"))
+hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
