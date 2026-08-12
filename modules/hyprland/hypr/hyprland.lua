@@ -33,3 +33,4 @@ hl.config({
     },
 })
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd("ghostty"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("zen"))
