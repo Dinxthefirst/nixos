@@ -45,7 +45,7 @@ hl.bind("SUPER + SHIFT + M", hl.dsp.exit())
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + R", hl.dsp.exec_cmd(menu))
-hl.bind("SUPER + F", hl.dsp.fullscreen())
+-- hl.bind("SUPER + F", hl.dsp.fullscreen())
 hl.bind("SUPER + W", hl.dsp.exec_cmd("pkill waybar || waybar"))
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
