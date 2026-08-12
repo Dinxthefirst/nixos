@@ -22,7 +22,7 @@ hl.monitor({
 
 local terminal = "ghostty"
 local fileManager = "dolphin"
-local menu = rofi drun -show
+local menu = "rofi drun -show"
 local browser = "zen"
 
 hl.config({
