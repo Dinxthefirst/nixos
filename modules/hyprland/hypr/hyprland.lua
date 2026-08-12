@@ -37,7 +37,7 @@ hl.config({
 -- Keybindings
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
-hl.bind("SUPER + Q", hl.dsp.dsp.window.close())
+hl.bind("SUPER + Q", hl.dsp.window.close())
 -- hl.bind("SUPER + SHIFT + Q", hl.dsp.force_kill_active())
 hl.bind("SUPER + CTRL + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind("SUPER + M", hl.dsp.exec_cmd("hyprlock"))
