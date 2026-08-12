@@ -71,7 +71,7 @@ in {
       # home.file.".config/hypr/input.conf".source = ./hypr/${hostname}/input.conf;
       # home.file.".config/hypr/look.conf".source = ./hypr/look.conf;
       home.file.".config/hypr/hyprland.lua".source = ./hypr/hyprland.lua;
-      home.file.".config/hypr/bindings.lua".source = ./hypr/bindings.lua;
+      # home.file.".config/hypr/bindings.lua".source = ./hypr/bindings.lua;
     };
   };
 }
