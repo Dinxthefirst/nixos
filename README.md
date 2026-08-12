@@ -22,7 +22,8 @@ Do not use the hardware configurations from this repository as they are likely n
 ## Further work
 
 - dendritic pattern (big task)
-- migrate hyprland config to lua
+- migrate hyprland config to lua (wip)
+- use hyprlauncher instead of drun
 
 ### Modules to add
 
