@@ -32,3 +32,4 @@ hl.config({
         sensitivity = -0.6, -- -1.0 - 1.0, 0 means no modification.
     },
 })
+hl.bind("SUPER + RETURN", hl.dsp.exec_cmd("ghostty"))
