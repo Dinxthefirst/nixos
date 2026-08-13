@@ -32,7 +32,7 @@ hl.config({
             enabled      = true,
             range        = 4,
             render_power = 3,
-            color        = 0xee1a1a1a,
+            color        = 0x1a1a1aee,
         },
 
         blur = {
@@ -112,5 +112,13 @@ hl.config({
 hl.config({
     scrolling = {
         fullscreen_on_one_column = true,
+    },
+})
+
+-- misc
+hl.config({
+    misc = {
+        force_default_wallpaper = 1,
+        disable_hyprland_logo = true,
     },
 })
