@@ -1,3 +1,7 @@
+local terminal = "ghostty"
+local fileManager = "dolphin"
+local menu = "rofi drun -show"
+local browser = "zen"
 
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
