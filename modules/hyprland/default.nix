@@ -40,7 +40,7 @@ in {
 
     environment.systemPackages = with pkgs; [
       kdePackages.dolphin
-      rofi
+      hyprlauncher
       hyprshot
       hyprpaper
       playerctl

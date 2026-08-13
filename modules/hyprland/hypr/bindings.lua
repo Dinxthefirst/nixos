@@ -1,6 +1,6 @@
 local terminal = "ghostty"
 local fileManager = "dolphin"
-local menu = "rofi drun -show"
+local menu = "hyprlauncher"
 local browser = "zen"
 
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd(terminal))
