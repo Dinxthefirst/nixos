@@ -73,7 +73,7 @@ in {
       home.file.".config/hypr/hyprland.lua".source = ./hypr/hyprland.lua;
       home.file.".config/hypr/bindings.lua".source = ./hypr/bindings.lua;
       home.file.".config/hypr/look.lua".source = ./hypr/look.lua;
-      home.file.".config/hypr/monitor.lua".source = ./hypr/${hostname}/monitors.lua;
+      home.file.".config/hypr/monitors.lua".source = ./hypr/${hostname}/monitors.lua;
       home.file.".config/hypr/input.lua".source = ./hypr/${hostname}/input.lua;
     };
   };
