@@ -31,23 +31,24 @@ hl.config({
         kb_variant = "nodeadkeys",
 
         accel_profile = "flat",
-        sensitivity = -0.2, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
     },
 })
 
 
 -- Keybindings
+require("bindings")
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
 hl.bind("SUPER + Q", hl.dsp.window.close())
--- hl.bind("SUPER + SHIFT + Q", hl.dsp.force_kill_active())
+hl.bind("SUPER + SHIFT + Q", hl.dsp.window.kill())
 hl.bind("SUPER + CTRL + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind("SUPER + M", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("SUPER + SHIFT + M", hl.dsp.exit())
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager))
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + R", hl.dsp.exec_cmd(menu))
--- hl.bind("SUPER + F", hl.dsp.fullscreen())
+hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle"}))
 hl.bind("SUPER + W", hl.dsp.exec_cmd("pkill waybar || waybar"))
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
