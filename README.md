@@ -22,6 +22,7 @@ Do not use the hardware configurations from this repository as they are likely n
 ## Further work
 
 - dendritic pattern (big task)
+- dark mode shortcut in hyprland instead of terminal
 
 ### Modules to add
 
