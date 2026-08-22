@@ -39,6 +39,7 @@ in {
 
           "hyprland/workspaces" = {
             format = "{name}: {icon}";
+            on-click = "activate";
             format-icons = {
               active = "";
               default = "";
