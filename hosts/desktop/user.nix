@@ -11,7 +11,7 @@
       hyprland.enable = true;
       discord.enable = true;
       steam.enable = true;
-      stremio.enable = true;
+      stremio.enable = false;
       gaming.enable = true;
       lutris.enable = false;
       heroic.enable = false;

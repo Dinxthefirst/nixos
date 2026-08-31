@@ -30,7 +30,7 @@ in {
     environment.systemPackages = with pkgs; [
       mangohud
       # scarab # hollow knight mod manager
-      creamlinux
+      # creamlinux
     ];
 
     programs.gamemode.enable = true;
