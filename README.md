@@ -24,6 +24,10 @@ Do not use the hardware configurations from this repository as they are likely n
 - dendritic pattern (big task)
 - dark mode shortcut in hyprland instead of terminal (hyprqt6engine) (maybe button in waybar)
 
+## Bugs
+
+- waybar does not update workspaces
+
 ### Modules to add
 
 - comma (for testing packages)
