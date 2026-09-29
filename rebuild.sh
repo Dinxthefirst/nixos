@@ -12,9 +12,9 @@ Usage: $(basename "$0") <target> [-h] [-u] [-v] [-b] [--no-push]
 
 Options:
   -h, --help      Show this help
-  -u, --update    Update flake inputs before rebuilding
-  -v, --verbose   Stream build logs to terminal
-  -b, --boot      Use 'nixos-rebuild boot' instead of 'switch'
+  -u, --update    Update flake inputs 
+  -v, --verbose   Show build logs 
+  -b, --boot      Apply rebuild after boot 
       --no-push   Commit but do not push
 EOF
 }
@@ -83,8 +83,6 @@ if [[ $REBUILD_EXIT_STATUS -ne 0 ]]; then
     fi
     exit "$REBUILD_EXIT_STATUS"
 fi
- 
-echo "Rebuild successful!"
 
 git add -A
 
@@ -96,7 +94,7 @@ if ! git diff --cached --quiet; then
         git push
         echo "Changes pushed!"
     else
-        echo "Commited, not pushed."
+        echo "Committed, not pushed."
     fi
 else
     echo "No changes to commit."
@@ -106,3 +104,5 @@ else
         echo "Pushed existing unpushed commits."
     fi
 fi
+ 
+echo "Rebuild successful!"
