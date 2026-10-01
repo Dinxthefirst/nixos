@@ -67,6 +67,7 @@ REBUILD_CMD+=(--flake "${CONFIG_DIR}#${TARGET}" --accept-flake-config)
 echo "NixOS Rebuilding for $TARGET..."
 
 if [[ "$VERBOSE" == true ]]; then
+    REBUILD_CMD+=(-L --show-trace)
     "${REBUILD_CMD[@]}" 2>&1 | tee "$NIXOS_LOG_FILE"
     REBUILD_EXIT_STATUS=${PIPESTATUS[0]}
 else
