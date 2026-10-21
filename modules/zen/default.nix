@@ -30,8 +30,7 @@ with lib; let
   ];
 
   zen =
-    pkgs.wrapFirefox
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default.override
     {
       extraPrefs = lib.concatLines (
         lib.mapAttrsToList (
