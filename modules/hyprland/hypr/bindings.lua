@@ -1,7 +1,7 @@
 local terminal = "ghostty"
 local fileManager = "dolphin"
 local menu = "hyprlauncher"
-local browser = "zen"
+local browser = "zen-beta"
 
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER + B", hl.dsp.exec_cmd(browser))
