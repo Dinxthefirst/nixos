@@ -29,50 +29,48 @@ with lib; let
     (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
   ];
 
-  zen =
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default.override
-    {
-      extraPrefs = lib.concatLines (
-        lib.mapAttrsToList (
-          name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
-        )
-        prefs
-      );
-      extraPolicies = {
-        DisableTelemetry = true;
-        ExtensionSettings = builtins.listToAttrs extensions;
+  zen = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
+    extraPrefs = lib.concatLines (
+      lib.mapAttrsToList (
+        name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
+      )
+      prefs
+    );
+    extraPolicies = {
+      DisableTelemetry = true;
+      ExtensionSettings = builtins.listToAttrs extensions;
 
-        SearchEngines = {
-          Default = "qwant";
-          Add = [
-            {
-              Name = "nixpkgs packages";
-              URLTemplate = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}";
-              IconURL = "https://wiki.nixos.org/favicon.ico";
-              Alias = "@np";
-            }
-            {
-              Name = "NixOS options";
-              URLTemplate = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";
-              IconURL = "https://wiki.nixos.org/favicon.ico";
-              Alias = "@no";
-            }
-            {
-              Name = "NixOS Wiki";
-              URLTemplate = "https://wiki.nixos.org/w/index.php?search={searchTerms}";
-              IconURL = "https://wiki.nixos.org/favicon.ico";
-              Alias = "@nw";
-            }
-            {
-              Name = "noogle";
-              URLTemplate = "https://noogle.dev/q?term={searchTerms}";
-              IconURL = "https://noogle.dev/favicon.ico";
-              Alias = "@ng";
-            }
-          ];
-        };
+      SearchEngines = {
+        Default = "qwant";
+        Add = [
+          {
+            Name = "nixpkgs packages";
+            URLTemplate = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}";
+            IconURL = "https://wiki.nixos.org/favicon.ico";
+            Alias = "@np";
+          }
+          {
+            Name = "NixOS options";
+            URLTemplate = "https://search.nixos.org/options?channel=unstable&query={searchTerms}";
+            IconURL = "https://wiki.nixos.org/favicon.ico";
+            Alias = "@no";
+          }
+          {
+            Name = "NixOS Wiki";
+            URLTemplate = "https://wiki.nixos.org/w/index.php?search={searchTerms}";
+            IconURL = "https://wiki.nixos.org/favicon.ico";
+            Alias = "@nw";
+          }
+          {
+            Name = "noogle";
+            URLTemplate = "https://noogle.dev/q?term={searchTerms}";
+            IconURL = "https://noogle.dev/favicon.ico";
+            Alias = "@ng";
+          }
+        ];
       };
     };
+  };
 in {
   options.modules.zen.enable = mkEnableOption "zen";
 
