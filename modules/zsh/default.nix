@@ -85,6 +85,7 @@ in {
             NIXPKGS_ALLOW_UNFREE=1 nix-shell -p "$1" --extra-experimental-features flakes --command zsh
           }
           nd() {
+            nix flake update
             nix develop $1 --command zsh
           }
         '';
