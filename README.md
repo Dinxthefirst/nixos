@@ -26,7 +26,8 @@ Do not use the hardware configurations from this repository as they are likely n
 
 ## Bugs
 
-- waybar does not update workspaces
+- waybar does not allow clicking on workspaces
+- zen browser does not get overridden
 
 ### Modules to add
 

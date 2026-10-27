@@ -88,6 +88,10 @@ in {
             nix flake update
             nix develop $1 --command zsh
           }
+          nr() {
+            nix flake update
+            nix run $1
+          }
         '';
 
         history = {
