@@ -14,6 +14,9 @@ in {
   };
 
   config = mkIf cfg.enable {
+    nix.extraOptions = ''
+      !include /home/${user}/.config/nixos/secrets/access-tokens.conf
+    '';
     environment.systemPackages = with pkgs; [
       diff-so-fancy
     ];
