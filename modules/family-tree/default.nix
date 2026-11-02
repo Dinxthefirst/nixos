@@ -29,11 +29,11 @@ in {
       serviceConfig = {
         ExecStart = "${pkgs.nodejs}/bin/node ${web}/build";
 
+        EnvironmentFile = "/etc/family-tree/production.env";
         Environment = [
           "HOST=127.0.0.1"
           "PORT=3000"
           "NODE_ENV=production"
-          "DATABASE_PATH=/var/lib/family-tree/family.db"
         ];
 
         Restart = "on-failure";
