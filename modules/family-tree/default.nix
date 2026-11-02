@@ -6,7 +6,7 @@
 }:
 with lib; let
   cfg = config.modules.family-tree;
-  web = "/nix/store/q0a7vilwrr654pq7f5inlwadla3b40xd-family-tree-0.1.0";
+  web = "/nix/store/h4s45yli87z3skggxywi6484976q6nyw-family-tree-0.1.0";
 in {
   options.modules.family-tree.enable = mkEnableOption "family-tree";
 
