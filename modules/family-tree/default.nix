@@ -12,27 +12,29 @@ in {
   config = mkIf cfg.enable {
     services.caddy = {
       enable = true;
-      email = "olivertoftk@live.dk";
+
       virtualHosts."oliver-toft.dk".extraConfig = ''
         reverse_proxy 127.0.0.1:3000
       '';
-      virtualHosts."www.oliver-toft.dk".extraConfig = ''
-        redir https://oliver-toft.dk{uri} permanent
-      '';
-    };
-
-    systemd.services.family-tree = {
-      serviceConfig = {
-        User = "toft";
-        ExecStart = "/home/toft/.local/share/deploy/family-tree/bin/family-tree";
-        Restart = "no";
-      };
-      environment = {
-        PORT = "3000";
-        HOST = "127.0.0.1";
-      };
     };
 
     networking.firewall.allowedTCPPorts = [80 443];
+
+    systemd.services.family-tree = {
+      description = "Family Tree website";
+      wantedBy = [];
+      after = ["network.target"];
+
+      serviceConfig = {
+        WorkingDirectory = "/home/toft/projects/family-tree";
+        ExecStart = "${pkgs.nodejs}/bin/node build";
+        Environment = [
+          "HOST=127.0.0.1"
+          "PORT=3000"
+          "NODE_ENV=production"
+        ];
+        Restart = "on-failure";
+      };
+    };
   };
 }
