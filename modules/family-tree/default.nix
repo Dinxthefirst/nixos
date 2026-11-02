@@ -6,6 +6,7 @@
 }:
 with lib; let
   cfg = config.modules.family-tree;
+  web = "/nix/store/xi3bj8s9qxzz9xrrg530i9910mh08pc8-family-tree-0.1.0";
 in {
   options.modules.family-tree.enable = mkEnableOption "family-tree";
 
@@ -22,18 +23,23 @@ in {
 
     systemd.services.family-tree = {
       description = "Family Tree website";
-      wantedBy = [];
+
       after = ["network.target"];
 
       serviceConfig = {
-        WorkingDirectory = "/home/toft/projects/family-tree";
-        ExecStart = "${pkgs.nodejs}/bin/node build";
+        ExecStart = "${pkgs.nodejs}/bin/node ${web}/build";
+        WorkingDirectory = "${web}";
+
         Environment = [
           "HOST=127.0.0.1"
           "PORT=3000"
           "NODE_ENV=production"
         ];
+
+        EnvironmentFile = "/etc/family-tree.env";
+
         Restart = "on-failure";
+        User = "nobody";
       };
     };
   };
