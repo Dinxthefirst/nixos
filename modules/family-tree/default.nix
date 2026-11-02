@@ -28,17 +28,26 @@ in {
 
       serviceConfig = {
         ExecStart = "${pkgs.nodejs}/bin/node ${web}/build";
-        WorkingDirectory = "${web}";
 
         Environment = [
           "HOST=127.0.0.1"
           "PORT=3000"
           "NODE_ENV=production"
+          "DATABASE_PATH=/var/lib/family-tree/family.db"
         ];
 
         Restart = "on-failure";
-        User = "nobody";
+        User = "family-tree";
+        Group = "family-tree";
+        StateDirectory = "family-tree";
+        WorkingDirectory = "/var/lib/family-tree";
       };
     };
+
+    users.users.family-tree = {
+      isSystemUser = true;
+      group = "family-tree";
+    };
+    users.groups.family-tree = {};
   };
 }
