@@ -36,7 +36,7 @@ in {
           "NODE_ENV=production"
         ];
 
-        EnvironmentFile = "/etc/family-tree.env";
+        EnvironmentFile = ".env";
 
         Restart = "on-failure";
         User = "nobody";
