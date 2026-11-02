@@ -36,6 +36,7 @@
       bluetooth.enable = true;
       network.enable = true;
       zoxide.enable = true;
+      family-tree.enable = true;
     };
   };
 }
