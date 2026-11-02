@@ -36,8 +36,6 @@ in {
           "NODE_ENV=production"
         ];
 
-        EnvironmentFile = ".env";
-
         Restart = "on-failure";
         User = "nobody";
       };
