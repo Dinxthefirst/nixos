@@ -75,6 +75,7 @@
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     import-tree.url = "github:vic/import-tree";
+    family-tree.url = "path:/home/toft/projects/family-tree";
   };
 
   nixConfig = {
