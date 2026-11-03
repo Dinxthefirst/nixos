@@ -60,8 +60,8 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1793723806,
-        "narHash": "sha256-xFFhwFDSVYE1CYWWkl7C8AUoI3e7U6mT+bV8ZmvFQoY=",
+        "lastModified": 1793732051,
+        "narHash": "sha256-/AUbVByKmwhgnAbdxc/C3zmLNmH+StE9Zh94JAkSewM=",
         "path": "/home/toft/projects/family-tree",
         "type": "path"
       },
