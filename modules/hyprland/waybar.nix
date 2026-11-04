@@ -38,6 +38,8 @@ in {
           ];
 
           "hyprland/workspaces" = {
+            all-outputs = true;
+            show-special = true;
             format = "{name}: {icon}";
             on-click = "activate";
             format-icons = {
