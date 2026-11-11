@@ -80,7 +80,7 @@ in {
               "**/.metals" = true;
             };
             "zig.zls.enabled" = "on";
-            "window.autodetectColorScheme" = true;
+            "window.autoDetectColorScheme" = true;
             "workbench.preferredDarkColorTheme" = "Dracula Theme";
             "workbench.preferredLightColorTheme" = "Solarized Light";
             "chat.disableAIFeatures" = true;
