@@ -37,6 +37,7 @@
       network.enable = true;
       zoxide.enable = true;
       family-tree.enable = true;
+      darkman.enable = true;
     };
   };
 }
