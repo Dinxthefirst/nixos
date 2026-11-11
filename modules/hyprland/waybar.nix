@@ -16,6 +16,7 @@ in {
       programs.waybar = {
         enable = true;
         style = ./style.css;
+
         settings.main = {
           layer = "top";
           output = ["DP-1" "eDP-1"];

@@ -73,7 +73,6 @@ in {
             "editor.minimap.enabled" = false;
             "editor.detectIndentation" = false;
             "workbench.startupEditor" = "none";
-            "workbench.colorTheme" = "Dracula Theme";
             "editor.fontSize" = 16;
             "editor.rulers" = [80];
             "files.watcherExclude" = {
