@@ -33,7 +33,7 @@ in {
           rose-pine
           telescope-nvim
           plenary-nvim
-          nvim-treesitter.withAllGrammars
+          # nvim-treesitter.withAllGrammars
           undotree
           nvim-cmp
           cmp-nvim-lsp
