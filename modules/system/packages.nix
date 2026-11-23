@@ -6,5 +6,6 @@
     fastfetch
     alejandra
     pavucontrol
+    ncdu
   ];
 }
